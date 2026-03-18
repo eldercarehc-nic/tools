@@ -164,9 +164,33 @@
       .st { font-size: 10px; }
       .footer { flex-direction: column; text-align: center; font-size: 10px; }
     }
-  </style>
+  
+  /* NAV BAR */
+  .nav-bar { background: #fff; border: 1px solid #dedad2; border-radius: 8px; padding: 8px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .nav-back { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; font-size: 10px; font-weight: 700; color: #185FA5; background: #eaf2fb; border: 1px solid #b5d4f4; border-radius: 4px; padding: 3px 9px; white-space: nowrap; transition: background 0.12s; }
+  .nav-back:hover { background: #d4e9f7; }
+  .nav-sep { color: #dedad2; font-size: 13px; margin: 0 1px; }
+  .nav-link { display: inline-flex; align-items: center; text-decoration: none; font-size: 10px; font-weight: 600; color: #555; background: #f7f4ef; border: 1px solid #e5e0d8; border-radius: 4px; padding: 3px 9px; white-space: nowrap; transition: background 0.12s, color 0.12s; }
+  .nav-link:hover { background: #eee9e0; color: #111; }
+  .nav-link.active { background: #eaf2fb; color: #185FA5; border-color: #b5d4f4; font-weight: 700; cursor: default; pointer-events: none; }
+  @media (max-width: 520px) { .nav-bar { gap: 5px; } .nav-link, .nav-back { font-size: 9.5px; padding: 3px 7px; } .nav-sep { display: none; } }
+
+</style>
 </head>
 <body>
+
+  <!-- NAV BAR -->
+  <div class="nav-bar">
+    <a class="nav-back" href="index.html">&#8592; Hub</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="eldercare_cheatsheet_v4.html">&#128203; Service Agreement</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="rn_vs_lpn_cheatsheet.html">&#129658; RN vs LPN</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="lead_distribution_cheatsheet.html">&#9889; Lead Distribution</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-link active">&#128202; Rep Expectations</span>
+  </div>
 <div class="page">
 
   <!-- HEADER -->
@@ -356,10 +380,4 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
-    <span>For internal sales use only &middot; Sales Rep Expectations</span>
-  </div>
-
-</div>
-</body>
-</html>
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="77351e1b1b1e191037121b131205141605121f145914181a">[email&#160;protected]</a> &middot; (917) 
