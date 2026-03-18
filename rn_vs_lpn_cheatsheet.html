@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>RN vs LPN in NY Home Care · Elder Care Quick Ref</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rn: #185FA5; --rn-light: #eaf2fb; --rn-border: #b5d4f4;
+      --lpn: #0a6648; --lpn-light: #eaf6f0; --lpn-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --bg: #f0ede8; --card: #ffffff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8; --divider: #ede9e2;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 12px; line-height: 1.5; }
+    .page { max-width: 980px; margin: 0 auto; padding: 14px 14px 20px; }
+
+    /* HEADER */
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 15px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .badge { background: var(--rn-light); color: var(--rn); font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--rn-border); white-space: nowrap; flex-shrink: 0; }
+
+    /* INTRO BANNER */
+    .intro { background: linear-gradient(135deg, #185FA5 0%, #0a6648 100%); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .intro-block { color: #fff; }
+    .intro-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.75; margin-bottom: 5px; }
+    .intro-name { font-size: 24px; font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+    .intro-desc { font-size: 11px; opacity: 0.9; line-height: 1.65; }
+
+    /* GRIDS */
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-1 { margin-bottom: 10px; }
+
+    /* CARDS */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px; }
+    .card.rn-card  { border-top: 3px solid var(--rn); }
+    .card.lpn-card { border-top: 3px solid var(--lpn); }
+    .card.slate-card { border-top: 3px solid var(--slate); }
+
+    /* SECTION TITLES */
+    .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; display: flex; align-items: center; gap: 6px; }
+    .st-rn    { color: var(--rn);    border-color: var(--rn-border); }
+    .st-lpn   { color: var(--lpn);   border-color: var(--lpn-border); }
+    .st-red   { color: var(--red);   border-color: var(--red-border); }
+    .st-slate { color: var(--slate); border-color: var(--slate-border); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-rn { background: var(--rn); }
+    .dot-lpn { background: var(--lpn); }
+    .dot-slate { background: var(--slate); }
+
+    /* KV ROWS */
+    .kv { display: flex; justify-content: space-between; align-items: flex-start; padding: 3.5px 0; font-size: 11px; border-bottom: 1px solid #f2efe9; gap: 8px; }
+    .kv:last-child { border-bottom: none; }
+    .kl { color: var(--muted); flex: 1; }
+    .kv-val { font-weight: 600; color: #111; text-align: right; }
+
+    /* BULLETS */
+    .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 3px 0 3px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
+    .bul:last-child { border-bottom: none; }
+    .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
+    .bul strong { font-weight: 700; color: #111; }
+    .bul.no::before { content: "✕"; color: var(--red); font-size: 9px; top: 5px; left: 1px; }
+
+    /* RULE BLOCKS */
+    .rule { background: var(--subtle); border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid var(--subtle-border); }
+    .rule:last-child { margin-bottom: 0; }
+    .rule strong { font-weight: 700; color: #111; }
+    .rule.rn-rule  { background: var(--rn-light);  border-color: var(--rn-border); }
+    .rule.lpn-rule { background: var(--lpn-light); border-color: var(--lpn-border); }
+
+    /* STEP NUMBERS */
+    .num-row { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; border-bottom: 1px solid #f2efe9; }
+    .num-row:last-child { border-bottom: none; }
+    .num-badge { width: 20px; height: 20px; border-radius: 50%; font-size: 9px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .nb-rn { background: var(--rn); }
+    .num-text { font-size: 11px; color: #333; line-height: 1.55; flex: 1; }
+    .num-text strong { font-weight: 700; color: #111; }
+
+    /* COMPARISON TABLE */
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .comp-table th { padding: 5px 8px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; border: 1px solid var(--border); }
+    .comp-table th.h-aspect { background: #ede9e3; color: var(--slate); text-align: left; }
+    .comp-table th.h-rn  { background: var(--rn-light);  color: var(--rn);  text-align: left; }
+    .comp-table th.h-lpn { background: var(--lpn-light); color: var(--lpn); text-align: left; }
+    .comp-table td { padding: 5px 8px; border: 1px solid #ede9e3; vertical-align: top; line-height: 1.5; }
+    .comp-table td.aspect { font-weight: 700; color: var(--slate); background: #faf8f5; }
+    .comp-table tr:nth-child(even) td { background: #faf8f5; }
+    .comp-table tr:nth-child(even) td.aspect { background: #f2efe9; }
+
+    /* CHECK/CROSS TABLE */
+    .cc-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .cc-table th { padding: 5px 8px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; border: 1px solid var(--border); }
+    .cc-table th.h-task { background: #ede9e3; color: var(--slate); text-align: left; }
+    .cc-table th.h-rn  { background: var(--rn-light);  color: var(--rn);  text-align: center; }
+    .cc-table th.h-lpn { background: var(--lpn-light); color: var(--lpn); text-align: center; }
+    .cc-table td { padding: 5px 8px; border: 1px solid #ede9e3; }
+    .cc-table td.task { color: #333; }
+    .cc-table td.check { text-align: center; font-size: 13px; }
+    .cc-table .yes { color: #2e6010; }
+    .cc-table .no  { color: var(--red); }
+    .cc-table tr:nth-child(even) td { background: #faf8f5; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* DIVIDER / LABEL */
+    .sdiv { border: none; border-top: 1px solid var(--divider); margin: 9px 0; }
+    .section-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 6px; margin-top: 2px; }
+
+    /* FOOTER */
+    .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; flex-wrap: wrap; }
+
+    /* TABLET */
+    @media (max-width: 768px) {
+      body { font-size: 13px; }
+      .page { padding: 10px; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .intro  { grid-template-columns: 1fr; gap: 10px; }
+      .intro-name { font-size: 18px; }
+      .bul, .rule, .num-text, .kv { font-size: 12px; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 520px) {
+      body { font-size: 14px; }
+      .page { padding: 8px 8px 18px; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .intro { grid-template-columns: 1fr; padding: 14px; }
+      .intro-name { font-size: 20px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .badge { align-self: flex-start; }
+      .card { padding: 12px 13px; }
+      .kv { flex-wrap: wrap; }
+      .kl  { flex: 1 1 55%; font-size: 13px; }
+      .kv-val { font-size: 13px; }
+      .bul { font-size: 13px; padding: 4px 0 4px 16px; }
+      .rule { font-size: 13px; }
+      .num-text { font-size: 13px; }
+      .st { font-size: 10px; }
+      .comp-table, .cc-table { font-size: 11px; }
+      .footer { flex-direction: column; text-align: center; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
+      <div>
+        <div class="brand-text">Elder Care Homecare, Inc.</div>
+        <div class="brand-sub">NY Home Care Clinical Reference</div>
+      </div>
+    </div>
+    <div class="badge">Quick Ref &middot; RN vs LPN &middot; New York</div>
+  </div>
+
+  <!-- INTRO BANNER -->
+  <div class="intro">
+    <div class="intro-block">
+      <div class="intro-label">Registered Nurse</div>
+      <div class="intro-name">RN</div>
+      <div class="intro-desc">Broad scope of practice including complex procedures, independent assessments, comprehensive care planning, and clinical supervision of LPNs, HHAs, and PCAs.</div>
+    </div>
+    <div class="intro-block">
+      <div class="intro-label">Licensed Practical Nurse</div>
+      <div class="intro-name">LPN</div>
+      <div class="intro-desc">Routine and basic care tasks performed under RN supervision. Handles standard nursing interventions, limited medication administration, and patient support and education reinforcement.</div>
+    </div>
+  </div>
+
+  <!-- ROW 1: Regulatory Framework (3 col) -->
+  <div class="grid-3">
+
+    <div class="card slate-card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Governing Regulation</div>
+      <div class="kv"><span class="kl">Primary regulation</span><span class="kv-val">10 NYCRR Part 766</span></div>
+      <div class="kv"><span class="kl">Key section</span><span class="kv-val">766.5 — Clinical Supervision</span></div>
+      <div class="kv"><span class="kl">Also governed by</span><span class="kv-val">NYS Nurse Practice Act</span></div>
+      <div class="kv"><span class="kl">HHA supervisor</span><span class="kv-val">RN only</span></div>
+      <div class="kv"><span class="kl">Skill &amp; annual evals</span><span class="kv-val">RN only (HHAs, PCAs, LPNs)</span></div>
+    </div>
+
+    <div class="card slate-card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>766.5 — Clinical Supervision Rules</div>
+      <div class="num-row">
+        <div class="num-badge nb-rn">1</div>
+        <div class="num-text">Agencies must ensure supervision includes <strong>case review, in-home visits, demonstration, evaluation, and clinical consultation.</strong></div>
+      </div>
+      <div class="num-row">
+        <div class="num-badge nb-rn">2</div>
+        <div class="num-text">Home health aides must be <strong>supervised by an RN.</strong></div>
+      </div>
+      <div class="num-row">
+        <div class="num-badge nb-rn">3</div>
+        <div class="num-text">RNs are the <strong>only discipline</strong> permitted to conduct skills and annual evaluations on HHAs, PCAs, and LPNs.</div>
+      </div>
+    </div>
+
+    <div class="card slate-card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Key Takeaway</div>
+      <div class="rule rn-rule"><strong>RN in Home Care:</strong> Broader responsibilities — complex care, independent decision-making, care planning, and supervision of the entire home care team.</div>
+      <div class="rule lpn-rule"><strong>LPN in Home Care:</strong> Important team member handling focused, routine tasks. Assists with basic care and provides support under RN direction and supervision.</div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: RN Duties | LPN Duties (2 col) -->
+  <div class="grid-2">
+
+    <div class="card rn-card">
+      <div class="st st-rn"><span class="dot dot-rn"></span>RN Duties in Home Care</div>
+
+      <div class="section-label">Assessment &amp; Planning</div>
+      <div class="bul">Performs <strong>physical exams and comprehensive patient assessments</strong></div>
+      <div class="bul">Develops <strong>comprehensive skilled nursing care plans</strong></div>
+      <div class="bul">Performs triage and independent clinical decision-making</div>
+
+      <hr class="sdiv">
+      <div class="section-label">Skilled Nursing Interventions</div>
+      <div class="bul">Medication administration including <strong>advanced and IV medications</strong></div>
+      <div class="bul">IV Therapy, Central lines (PICC/ports), TPN</div>
+      <div class="bul"><strong>Complex wound care</strong> — irrigation, VAC therapy, surgical wounds</div>
+      <div class="bul">Ostomy care, catheter care, feeding and therapeutic diets</div>
+      <div class="bul">Monitor and manage chronic conditions</div>
+
+      <hr class="sdiv">
+      <div class="section-label">Education &amp; Support</div>
+      <div class="bul">In-depth patient and family education on medications, conditions, and home safety</div>
+      <div class="bul">Emotional support for patients and families adjusting to chronic or serious illness</div>
+
+      <hr class="sdiv">
+      <div class="section-label">Monitoring, Documentation &amp; Supervision</div>
+      <div class="bul">Tracks vital signs, symptoms, changes — reports to physician and revises care plans</div>
+      <div class="bul">Maintains <strong>accurate, timely, and complete clinical documentation</strong></div>
+      <div class="bul"><strong>Supervises LPNs and HHAs</strong> and conducts all skills and annual evaluations</div>
+    </div>
+
+    <div class="card lpn-card">
+      <div class="st st-lpn"><span class="dot dot-lpn"></span>LPN Duties in Home Care</div>
+
+      <div class="section-label">Monitoring &amp; Basic Care</div>
+      <div class="bul">Vital signs monitoring and basic patient assessment (no independent assessments)</div>
+      <div class="bul">Basic patient care and routine tasks under RN supervision</div>
+
+      <hr class="sdiv">
+      <div class="section-label">Medication Administration (Limited)</div>
+      <div class="bul"><strong>Oral and topical medications</strong></div>
+      <div class="bul"><strong>G tube / PEG tube</strong> feedings and medications</div>
+      <div class="bul">Basic injections as directed by supervising RN</div>
+
+      <hr class="sdiv">
+      <div class="section-label">Nursing Interventions</div>
+      <div class="bul">Urinary straight catheterization</div>
+      <div class="bul">Tracheal suctioning</div>
+      <div class="bul">Sterile dressing changes (simple wounds only)</div>
+      <div class="bul">G tube feedings and medication administration</div>
+
+      <hr class="sdiv">
+      <div class="section-label">Education &amp; Documentation</div>
+      <div class="bul"><strong>Reinforces</strong> education provided by RNs — does not independently develop patient education plans</div>
+      <div class="bul">Accurate charting: progress notes, medication records, and flow sheets</div>
+
+      <hr class="sdiv">
+      <div class="section-label">LPN Restrictions — Cannot:</div>
+      <div class="bul no">Determine nursing diagnoses or develop nursing care plans</div>
+      <div class="bul no">Administer IV medications or manage/access central lines (PICC, ports)</div>
+      <div class="bul no">Perform independent nursing assessments</div>
+      <div class="bul no">Provide mental health counseling or case management</div>
+    </div>
+
+  </div>
+
+  <!-- ROW 3: Side-by-Side Comparison Table -->
+  <div class="grid-1">
+    <div class="card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Side-by-Side Comparison — RN vs LPN in Home Care</div>
+      <div class="table-scroll">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th class="h-aspect" style="width:20%">Aspect</th>
+              <th class="h-rn" style="width:40%">RN</th>
+              <th class="h-lpn" style="width:40%">LPN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="aspect">Scope of Practice</td><td>Broad scope including complex procedures and care management</td><td>Limited to basic and routine care, supervised by RN</td></tr>
+            <tr><td class="aspect">Assessment</td><td>Comprehensive, independent assessment and patient evaluation</td><td>Can assess basic care needs — no independent assessments</td></tr>
+            <tr><td class="aspect">Wound Care</td><td>Complex wound care (VAC, irrigation, surgical)</td><td>Sterile dressing changes — simple wounds only</td></tr>
+            <tr><td class="aspect">Medications</td><td>IV therapy, IVP, central lines, advanced meds, injections, TPN</td><td>Basic oral, topical, G tube / PEG tube only</td></tr>
+            <tr><td class="aspect">Clinical Procedures</td><td>Authorized to perform all complex procedures</td><td>Urinary straight cath, tracheal suctioning, basic wound care</td></tr>
+            <tr><td class="aspect">Care Planning</td><td>Develops comprehensive nursing care plans</td><td>Cannot develop nursing care plans</td></tr>
+            <tr><td class="aspect">Patient Education</td><td>Responsible for in-depth patient and family education</td><td>Reinforces RN-provided education on basic topics only</td></tr>
+            <tr><td class="aspect">Supervision Role</td><td>Supervises LPNs, HHAs, PCAs; performs all evals</td><td>Works under RN direction — cannot supervise independently</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 4: Task Authorization Quick Check -->
+  <div class="grid-1">
+    <div class="card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Task Authorization — Can They Perform It?</div>
+      <div class="table-scroll">
+        <table class="cc-table">
+          <thead>
+            <tr>
+              <th class="h-task">Task</th>
+              <th class="h-rn">RN</th>
+              <th class="h-lpn">LPN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="task">Perform physical exams and independent patient assessments</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Develop nursing care plan</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Perform triage</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">IV therapy / central line access</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Complex wound care</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Administer advanced / IV medications</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Supervise HHAs and LPNs</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Conduct HHA / LPN skill and annual evaluations</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Mental health counseling or case management</td><td class="check yes">✔</td><td class="check no">✕</td></tr>
+            <tr><td class="task">Basic patient care (vitals, monitoring)</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">Oral / topical medication administration</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">G tube / PEG tube feedings and medications</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">Urinary straight catheterization</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">Tracheal suctioning</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">Sterile dressing changes (simple wounds)</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">Clinical documentation and charting</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+            <tr><td class="task">Reinforce patient and family education</td><td class="check yes">✔</td><td class="check yes">✔</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>Source: 10 NYCRR Part 766 &middot; NYS Nurse Practice Act &middot; For internal use only</span>
+  </div>
+
+</div>
+</body>
+</html>
