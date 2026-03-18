@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>Acronyms &amp; Key Terms · Elder Care Sales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #185FA5; --blue-light: #eaf2fb; --blue-border: #b5d4f4;
+      --green: #0a6648; --green-light: #eaf6f0; --green-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --purple: #3c3489; --purple-light: #f0eeff; --purple-border: #c8c0f0;
+      --teal: #0e5f6e; --teal-light: #e4f4f7; --teal-border: #8fd4df;
+      --bg: #f0ede8; --card: #fff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8; --divider: #ede9e2;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 12px; line-height: 1.5; }
+    .page { max-width: 980px; margin: 0 auto; padding: 14px 14px 20px; }
+
+    /* NAV BAR */
+    .nav-bar { background: #fff; border: 1px solid #dedad2; border-radius: 8px; padding: 8px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .nav-back { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; font-size: 10px; font-weight: 700; color: #185FA5; background: #eaf2fb; border: 1px solid #b5d4f4; border-radius: 4px; padding: 3px 9px; white-space: nowrap; transition: background 0.12s; }
+    .nav-back:hover { background: #d4e9f7; }
+    .nav-sep { color: #dedad2; font-size: 13px; margin: 0 1px; }
+    .nav-link { display: inline-flex; align-items: center; text-decoration: none; font-size: 10px; font-weight: 600; color: #555; background: #f7f4ef; border: 1px solid #e5e0d8; border-radius: 4px; padding: 3px 9px; white-space: nowrap; transition: background 0.12s, color 0.12s; }
+    .nav-link:hover { background: #eee9e0; color: #111; }
+    .nav-link.active { background: #eaf2fb; color: #185FA5; border-color: #b5d4f4; font-weight: 700; cursor: default; pointer-events: none; }
+    @media (max-width: 520px) { .nav-bar { gap: 5px; } .nav-link, .nav-back { font-size: 9.5px; padding: 3px 7px; } .nav-sep { display: none; } }
+
+    /* HEADER */
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 15px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .badge { background: var(--blue-light); color: var(--blue); font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--blue-border); white-space: nowrap; flex-shrink: 0; }
+
+    /* INTRO */
+    .intro { background: linear-gradient(135deg, #185FA5 0%, #3c3489 100%); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; color: #fff; }
+    .intro-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.7; margin-bottom: 6px; }
+    .intro-title { font-size: 22px; font-weight: 700; line-height: 1.15; margin-bottom: 6px; }
+    .intro-desc { font-size: 11px; opacity: 0.85; line-height: 1.65; }
+
+    /* GRIDS */
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-1 { margin-bottom: 10px; }
+
+    /* CARDS */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px; }
+    .card.blue-card   { border-top: 3px solid var(--blue); }
+    .card.green-card  { border-top: 3px solid var(--green); }
+    .card.red-card    { border-top: 3px solid var(--red); }
+    .card.amber-card  { border-top: 3px solid var(--amber); }
+    .card.slate-card  { border-top: 3px solid var(--slate); }
+    .card.purple-card { border-top: 3px solid var(--purple); }
+    .card.teal-card   { border-top: 3px solid var(--teal); }
+
+    /* SECTION TITLES */
+    .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; display: flex; align-items: center; gap: 6px; }
+    .st-blue   { color: var(--blue);   border-color: var(--blue-border); }
+    .st-green  { color: var(--green);  border-color: var(--green-border); }
+    .st-red    { color: var(--red);    border-color: var(--red-border); }
+    .st-amber  { color: var(--amber);  border-color: var(--amber-border); }
+    .st-slate  { color: var(--slate);  border-color: var(--slate-border); }
+    .st-purple { color: var(--purple); border-color: var(--purple-border); }
+    .st-teal   { color: var(--teal);   border-color: var(--teal-border); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue   { background: var(--blue); }   .dot-green  { background: var(--green); }
+    .dot-red    { background: var(--red); }    .dot-amber  { background: var(--amber); }
+    .dot-slate  { background: var(--slate); }  .dot-purple { background: var(--purple); }
+    .dot-teal   { background: var(--teal); }
+
+    /* ACRONYM ROWS */
+    .arow { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f2efe9; align-items: flex-start; }
+    .arow:last-child { border-bottom: none; }
+    .aterm { font-size: 11px; font-weight: 700; color: #111; min-width: 52px; flex-shrink: 0; }
+    .adef  { font-size: 11px; color: #333; line-height: 1.55; flex: 1; }
+    .adef strong { font-weight: 700; color: #111; }
+    .adef em { font-style: normal; color: var(--muted); font-size: 10px; }
+
+    /* TERM BADGE */
+    .term-badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; margin-left: 5px; vertical-align: middle; border: 1px solid; white-space: nowrap; }
+    .tb-blue   { background: var(--blue-light);   color: var(--blue);   border-color: var(--blue-border); }
+    .tb-green  { background: var(--green-light);  color: var(--green);  border-color: var(--green-border); }
+    .tb-red    { background: var(--red-light);     color: var(--red);    border-color: var(--red-border); }
+    .tb-amber  { background: var(--amber-light);   color: var(--amber);  border-color: var(--amber-border); }
+    .tb-slate  { background: var(--slate-light);   color: var(--slate);  border-color: var(--slate-border); }
+    .tb-purple { background: var(--purple-light);  color: var(--purple); border-color: var(--purple-border); }
+    .tb-teal   { background: var(--teal-light);    color: var(--teal);   border-color: var(--teal-border); }
+
+    /* COMPARISON TABLE */
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .comp-table th { padding: 5px 8px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; border: 1px solid var(--border); }
+    .comp-table th.h-aspect { background: #ede9e3; color: var(--slate); text-align: left; }
+    .comp-table th.h-col { text-align: left; }
+    .comp-table th.h-hom { background: var(--slate-light); color: var(--slate); }
+    .comp-table th.h-pca { background: var(--amber-light); color: var(--amber); }
+    .comp-table th.h-hha { background: var(--blue-light);  color: var(--blue); }
+    .comp-table th.h-lpn { background: var(--teal-light);  color: var(--teal); }
+    .comp-table th.h-rn  { background: var(--purple-light);color: var(--purple); }
+    .comp-table th.h-cna { background: var(--green-light); color: var(--green); }
+    .comp-table td { padding: 5px 8px; border: 1px solid #ede9e3; vertical-align: top; line-height: 1.5; }
+    .comp-table td.aspect { font-weight: 700; color: var(--slate); background: #faf8f5; font-size: 10px; }
+    .comp-table tr:nth-child(even) td { background: #faf8f5; }
+    .comp-table tr:nth-child(even) td.aspect { background: #f2efe9; }
+    .yes  { color: var(--green); font-weight: 700; text-align: center; }
+    .no   { color: var(--red);   font-weight: 700; text-align: center; }
+    .ltd  { color: var(--amber); font-weight: 600; font-size: 10px; }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* PRIORITY BLOCKS */
+    .priority { border-radius: 6px; padding: 8px 11px; margin-bottom: 6px; border: 1px solid; }
+    .priority:last-child { margin-bottom: 0; }
+    .p1 { background: var(--red-light);   border-color: var(--red-border); }
+    .p2 { background: var(--amber-light); border-color: var(--amber-border); }
+    .p3 { background: var(--green-light); border-color: var(--green-border); }
+    .p-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 3px; }
+    .p1 .p-label { color: var(--red); }
+    .p2 .p-label { color: var(--amber); }
+    .p3 .p-label { color: var(--green); }
+    .p-text { font-size: 11px; color: #333; line-height: 1.55; }
+    .p-text strong { font-weight: 700; color: #111; }
+
+    /* SHIFT TYPES */
+    .shift { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f2efe9; align-items: flex-start; }
+    .shift:last-child { border-bottom: none; }
+    .stype { font-size: 11px; font-weight: 700; color: #111; min-width: 64px; flex-shrink: 0; }
+    .sdesc { font-size: 11px; color: #333; line-height: 1.55; flex: 1; }
+    .sdesc strong { font-weight: 700; color: #111; }
+
+    /* RULE BLOCKS */
+    .rule { background: var(--subtle); border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid var(--subtle-border); }
+    .rule:last-child { margin-bottom: 0; }
+    .rule strong { font-weight: 700; color: #111; }
+    .rule.red-rule { background: var(--red-light); border-color: var(--red-border); }
+    .rule.amber-rule { background: var(--amber-light); border-color: var(--amber-border); }
+    .rule.blue-rule { background: var(--blue-light); border-color: var(--blue-border); }
+
+    /* BULLETS */
+    .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 3px 0 3px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
+    .bul:last-child { border-bottom: none; }
+    .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
+    .bul strong { font-weight: 700; color: #111; }
+
+    /* DIVIDER */
+    .sdiv { border: none; border-top: 1px solid var(--divider); margin: 9px 0; }
+    .section-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 6px; margin-top: 2px; }
+
+    /* FOOTER */
+    .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; flex-wrap: wrap; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      body { font-size: 13px; }
+      .page { padding: 10px; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .adef, .aterm, .sdesc, .stype, .p-text, .rule, .bul { font-size: 12px; }
+    }
+    @media (max-width: 520px) {
+      body { font-size: 14px; }
+      .page { padding: 8px 8px 18px; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .badge { align-self: flex-start; }
+      .card { padding: 12px 13px; }
+      .aterm { min-width: 44px; }
+      .stype { min-width: 54px; }
+      .adef, .aterm, .sdesc, .stype, .p-text, .rule, .bul { font-size: 13px; }
+      .st { font-size: 10px; }
+      .footer { flex-direction: column; text-align: center; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <div style="max-width:980px;margin:0 auto;padding:14px 14px 0;">
+    <div class="nav-bar">
+      <a class="nav-back" href="index.html">&#8592; Hub</a>
+      <span class="nav-sep">|</span>
+      <a class="nav-link" href="eldercare_cheatsheet_v4.html">&#128203; Service Agreement</a>
+      <span class="nav-sep">|</span>
+      <a class="nav-link" href="rn_vs_lpn_cheatsheet.html">&#129658; RN vs LPN</a>
+      <span class="nav-sep">|</span>
+      <a class="nav-link" href="lead_distribution_cheatsheet.html">&#9889; Lead Distribution</a>
+      <span class="nav-sep">|</span>
+      <a class="nav-link" href="sales_rep_expectations.html">&#128202; Rep Expectations</a>
+      <span class="nav-sep">|</span>
+      <span class="nav-link active">&#128218; Acronyms</span>
+    </div>
+  </div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
+      <div>
+        <div class="brand-text">Elder Care Homecare, Inc.</div>
+        <div class="brand-sub">NY Home Care · Sales &amp; Clinical Reference</div>
+      </div>
+    </div>
+    <div class="badge">Quick Ref &middot; Acronyms &amp; Key Terms</div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-label">ECHC Reference Guide</div>
+    <div class="intro-title">Acronyms &amp; Key Terms</div>
+    <div class="intro-desc">A comprehensive glossary of clinical roles, care levels, insurance types, software terms, and operational concepts used across Elder Care Homecare.</div>
+  </div>
+
+  <!-- ROW 1: Clinical Roles (3 col) -->
+  <div class="grid-3">
+
+    <!-- Caregiver Roles -->
+    <div class="card blue-card">
+      <div class="st st-blue"><span class="dot dot-blue"></span>Caregiver Roles</div>
+      <div class="arow"><span class="aterm">HOM <span class="term-badge tb-slate">Homemaker</span></span><span class="adef">Non-medical household support — cleaning, cooking, errands, companionship. <em>No cert required. No ADLs. No nurse supervision. Can't use with LTC (usually).</em></span></div>
+      <div class="arow"><span class="aterm">PCA</span><span class="adef">Patient Care Assistant. Licensed. Helps with some IADLs, no ADLs. Can be used as HOM or HHA.</span></div>
+      <div class="arow"><span class="aterm">HHA</span><span class="adef">Home Health Aide. Certified. Helps with ADLs and IADLs. <em>LTC Mon–Fri only. Requires RN supervision.</em></span></div>
+      <div class="arow"><span class="aterm">CNA</span><span class="adef">Certified Nursing Assistant. Many come from hospitals. Used as HHAs or HOMs. Helps with ADLs and IADLs.</span></div>
+      <div class="arow"><span class="aterm">CG</span><span class="adef">Caregiver — general term for any aide providing direct care.</span></div>
+    </div>
+
+    <!-- Nursing Roles -->
+    <div class="card teal-card">
+      <div class="st st-teal"><span class="dot dot-teal"></span>Nursing Roles</div>
+      <div class="arow"><span class="aterm">LPN</span><span class="adef">Licensed Practical Nurse. 2-yr nursing school. Wound care, IV infusion, diabetes management. Basic meds only.</span></div>
+      <div class="arow"><span class="aterm">RN</span><span class="adef">Registered Nurse. 4-yr nursing school. Ventilator/tracheostomy, tube feeding, medication pre-pour/mgmt. <em>12-hr max shift; 24-hr = 4 days max, sleep 13 hrs / work 11 hrs.</em></span></div>
+      <div class="arow"><span class="aterm">RN CM</span><span class="adef">Registered Nurse Care Manager. Coordinates and oversees patient care — medical, social, and supportive services.</span></div>
+      <div class="arow"><span class="aterm">NP</span><span class="adef">Nurse Practitioner. Master's degree. Can issue doctor's orders (X-rays, scans, MRIs) and prescriptions.</span></div>
+      <div class="arow"><span class="aterm">BSN</span><span class="adef">Bachelor of Science in Nursing. Combines clinical training with leadership, research, and public health coursework.</span></div>
+    </div>
+
+    <!-- Other Clinical -->
+    <div class="card purple-card">
+      <div class="st st-purple"><span class="dot dot-purple"></span>Other Clinical &amp; Allied Health</div>
+      <div class="arow"><span class="aterm">CM</span><span class="adef">Care Management. Coordinated approach to supporting individuals with health, social, or functional needs.</span></div>
+      <div class="arow"><span class="aterm">SW</span><span class="adef">Social Worker. Helps individuals and families navigate health, relationships, and social systems.</span></div>
+      <div class="arow"><span class="aterm">DPS</span><span class="adef">Director of Patient Services.</span></div>
+      <div class="arow"><span class="aterm">OT</span><span class="adef">Occupational Therapy. <em>We outsource — CHHA typically involved.</em></span></div>
+      <div class="arow"><span class="aterm">PT</span><span class="adef">Physical Therapy. <em>We outsource — CHHA typically involved.</em></span></div>
+      <div class="arow"><span class="aterm">SLP</span><span class="adef">Speech Language Pathologist. <em>We outsource — CHHA typically involved.</em></span></div>
+      <div class="arow"><span class="aterm">SNV</span><span class="adef">Skilled Nurse Visit. A nurse visit to the patient's home.</span></div>
+      <div class="arow"><span class="aterm">SNF</span><span class="adef">Skilled Nursing Facility. Inpatient care setting.</span></div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Care Concepts + Insurance + Agency Types -->
+  <div class="grid-3">
+
+    <!-- Care Concepts -->
+    <div class="card green-card">
+      <div class="st st-green"><span class="dot dot-green"></span>Care Concepts</div>
+      <div class="arow"><span class="aterm">ADL</span><span class="adef">Activities of Daily Living. Bathing, brushing teeth, dressing, toileting, transferring. <strong>Hands-on personal care.</strong></span></div>
+      <div class="arow"><span class="aterm">IADL</span><span class="adef">Instrumental ADLs. Laundry, groceries, cleaning. <strong>Less hands-on</strong> than ADLs.</span></div>
+      <div class="arow"><span class="aterm">Care Plan</span><span class="adef">Document outlining health needs, care goals, and caregiver actions.</span></div>
+      <div class="arow"><span class="aterm">Plan of Care</span><span class="adef">Where caregivers receive their list of duties to perform during a shift.</span></div>
+      <div class="arow"><span class="aterm">485</span><span class="adef">Official physician document certifying patient eligibility for home health under Medicare. Doctor's orders for care.</span></div>
+      <div class="arow"><span class="aterm">DME</span><span class="adef">Durable Medical Equipment.</span></div>
+      <div class="arow"><span class="aterm">DOH</span><span class="adef">Department of Health.</span></div>
+      <div class="arow"><span class="aterm">Hoyer Lift</span><span class="adef">Patient transfer device. <strong>Requires two people</strong> — they tip over with one.</span></div>
+    </div>
+
+    <!-- Insurance -->
+    <div class="card amber-card">
+      <div class="st st-amber"><span class="dot dot-amber"></span>Insurance &amp; Payment</div>
+      <div class="arow"><span class="aterm">LTC</span><span class="adef">Long Term Care insurance. <em>Ameritas, MetLife, John Hancock, AARP, Mutual of Omaha, Brighthouse, NY Life.</em> Triggered when 2+ ADLs are impaired or cognitive impairment present.</span></div>
+      <div class="arow"><span class="aterm">MC</span><span class="adef">Medicare. Federal insurance for 65+, certain disabilities, ESRD, ALS.</span></div>
+      <div class="arow"><span class="aterm">MA</span><span class="adef">Medicaid. Joint federal/state insurance for low income or limited resources.</span></div>
+      <div class="arow"><span class="aterm">AOB</span><span class="adef">Assignment of Benefits. Who receives LTC/insurance payment. <strong>We do not do AOB</strong> — client pays us directly.</span></div>
+      <hr class="sdiv">
+      <div class="section-label" style="color:var(--red)">Insurance We Do Not Accept</div>
+      <div class="rule red-rule">Medicare, Medicaid, commercial insurance (BlueCross, Aetna, United), military (Tricare, Humana). <strong>We only accept LTC insurance and private pay.</strong></div>
+    </div>
+
+    <!-- Agency Types -->
+    <div class="card red-card">
+      <div class="st st-red"><span class="dot dot-red"></span>Agency Types</div>
+      <div class="arow"><span class="aterm">LHCSA <span class="term-badge tb-green">Us</span></span><span class="adef">Licensed Home Health Care Agency. Private homecare agency approved by NYS. <strong>Allows us to accept LTC insurance.</strong></span></div>
+      <div class="arow"><span class="aterm">CHHA <span class="term-badge tb-red">Not Us</span></span><span class="adef">Certified Home Health Agency. Takes insurance (Medicare/Medicaid). Examples: MJHS, Girling, Visiting Nurse Service, Centerlite, Americare. <em>Pronounced "CHA."</em></span></div>
+      <hr class="sdiv">
+      <div class="section-label">Sources of Clients</div>
+      <div class="bul">Hospital (acute care)</div>
+      <div class="bul">Acute rehab facility</div>
+      <div class="bul">Skilled nursing facility (SNF)</div>
+      <hr class="sdiv">
+      <div class="section-label">Referral Contacts</div>
+      <div class="bul"><strong>Hospital Social Workers</strong> — refer business; more holistic than case managers</div>
+      <div class="bul"><strong>Case Managers</strong> — usually nurses; handle discharge planning</div>
+      <div class="bul"><strong>Directors of Nursing</strong> — also helpful referral sources</div>
+    </div>
+
+  </div>
+
+  <!-- ROW 3: Software Terms + Shift Types -->
+  <div class="grid-2">
+
+    <!-- Software / Operations -->
+    <div class="card slate-card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Software &amp; Operations Terms</div>
+
+      <div class="section-label">ClearCare</div>
+      <div class="arow"><span class="aterm">Activity Tags</span><span class="adef">Categorize ClearCare features by specific needs. Track notes, group clients, caregivers, prospects, referral sources.</span></div>
+      <div class="arow"><span class="aterm">Profile Tags</span><span class="adef">Group profiles by criteria — classify and organize records in specific ways.</span></div>
+      <div class="arow"><span class="aterm">CareFinders</span><span class="adef">Tool to fill shifts quickly with the best available caregiver. Shows nearest available caregiver first, working down the list.</span></div>
+      <div class="arow"><span class="aterm">Note</span><span class="adef">Written record of observations or updates. Acts like a digital post-it. <em>May not be visible to caregivers.</em></span></div>
+      <div class="arow"><span class="aterm">Open Shift</span><span class="adef">Unassigned block of hours available for caregivers to claim.</span></div>
+      <div class="arow"><span class="aterm">Assessments</span><span class="adef">Detail the client's care plan. Visible to admins and caregivers.</span></div>
+
+      <hr class="sdiv">
+      <div class="section-label">Priority Codes — ClearCare</div>
+      <div class="priority p1">
+        <div class="p-label">Level 1 — High Priority</div>
+        <div class="p-text"><strong>Must have care.</strong> Condition is highly unstable. Every possible effort must be made — even during emergencies. Examples: life-sustaining equipment, skilled wound care, unstable with no caregiver support.</div>
+      </div>
+      <div class="priority p2">
+        <div class="p-label">Level 2 — Moderate Priority</div>
+        <div class="p-text">Services may be <strong>postponed with phone contact.</strong> Condition is somewhat unstable — care should happen that day but can be safely delayed briefly.</div>
+      </div>
+      <div class="priority p3">
+        <div class="p-label">Level 3 — Low Priority</div>
+        <div class="p-text">Patient is <strong>stable</strong> with access to informal resources. Can safely miss a scheduled visit with family or personal support.</div>
+      </div>
+
+      <hr class="sdiv">
+      <div class="section-label">TAL Levels — ClearCare</div>
+      <div class="arow"><span class="aterm">TAL-1</span><span class="adef">Non-ambulatory. Requires stretcher transport.</span></div>
+      <div class="arow"><span class="aterm">TAL-2</span><span class="adef">Wheelchair — unable to walk.</span></div>
+      <div class="arow"><span class="aterm">TAL-3</span><span class="adef">Ambulatory — able to walk.</span></div>
+
+      <hr class="sdiv">
+      <div class="section-label">Other</div>
+      <div class="arow"><span class="aterm">ILT</span><span class="adef">Instructor-Led Training session.</span></div>
+      <div class="arow"><span class="aterm">Q6MOS</span><span class="adef">Follow up every 6 months.</span></div>
+    </div>
+
+    <!-- Shift Types + Medical Conditions -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+
+      <div class="card amber-card">
+        <div class="st st-amber"><span class="dot dot-amber"></span>Shift Types</div>
+        <div class="shift"><span class="stype">2 &times; 12</span><span class="sdesc">8am–8pm and 8pm–8am (or similar split). <strong>Aide is up and available at all times.</strong></span></div>
+        <div class="shift"><span class="stype">Live-In</span><span class="sdesc">24-hour shift. Paid at 13-hr rate. Aide sleeps 6 hrs, may get up once or twice a night. <strong>Needs partitioned space.</strong></span></div>
+        <div class="shift"><span class="stype">Hourly</span><span class="sdesc">Must be <strong>more than 8 hours</strong> due to aide travel time.</span></div>
+      </div>
+
+      <div class="card teal-card">
+        <div class="st st-teal"><span class="dot dot-teal"></span>Nurse Supervision</div>
+        <div class="bul">In-home visit for each <strong>new client</strong> including care plan review</div>
+        <div class="bul"><strong>Performance evaluation</strong> — 1–2 times per year</div>
+        <div class="bul"><strong>Drug screen</strong> — annual</div>
+        <div class="bul"><strong>Flu vaccine</strong> — annual</div>
+        <hr class="sdiv">
+        <div class="section-label">Nurse Companion</div>
+        <div class="rule">A <strong>Nurse Companion</strong> is a homemaker case — the nurse is not performing nursing duties. Provides companionship only.</div>
+      </div>
+
+      <div class="card green-card">
+        <div class="st st-green"><span class="dot dot-green"></span>Common Conditions We Support</div>
+        <div class="bul">Alzheimer's / Dementia (Lewy Body, Vascular, Aphasia)</div>
+        <div class="bul">Traumatic Brain Injury / Stroke</div>
+        <div class="bul">Fall Prevention</div>
+        <div class="bul">Parkinson's, Multiple Sclerosis, ALS</div>
+        <div class="bul">CHF — Congestive Heart Failure <em>(low salt meal prep, med reminders)</em></div>
+        <div class="bul">Cancer treatments</div>
+        <div class="bul">Hip and Knee replacements</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ROW 4: Caregiver Comparison Table -->
+  <div class="grid-1">
+    <div class="card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Caregiver Role Comparison</div>
+      <div class="table-scroll">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th class="h-aspect" style="width:22%">Capability</th>
+              <th class="h-col h-hom" style="width:13%">HOM</th>
+              <th class="h-col h-pca" style="width:13%">PCA</th>
+              <th class="h-col h-hha" style="width:13%">HHA / CNA</th>
+              <th class="h-col h-lpn" style="width:13%">LPN</th>
+              <th class="h-col h-rn"  style="width:13%">RN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="aspect">Certification required</td><td class="no">✕</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">Assist with ADLs</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">Assist with IADLs</td><td class="ltd">Some</td><td class="ltd">Some</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">Use with LTC insurance</td><td class="ltd">Rarely</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">RN supervision required</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✔</td><td class="ltd">Indirect</td><td class="no">N/A</td></tr>
+            <tr><td class="aspect">Medication reminders (pre-sorted)</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✔</td><td class="yes">✔</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">Medication pre-pour / management</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✔ RN only</td></tr>
+            <tr><td class="aspect">Wound care</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="ltd">Simple</td><td class="yes">Complex</td></tr>
+            <tr><td class="aspect">IV therapy / central lines</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="ltd">Limited</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">Develop nursing care plan</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✔</td></tr>
+            <tr><td class="aspect">G tube / PEG tube feedings</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✔</td><td class="yes">✔</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>For internal use only &middot; Acronyms &amp; Key Terms</span>
+  </div>
+
+</div>
+</body>
+</html>
