@@ -1,175 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, Helvetica, sans-serif; background: #f0ede8; color: #1a1a1a; font-size: 11.5px; }
-  .page { max-width: 980px; margin: 0 auto; padding: 14px 14px 12px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>Sales Hub · Elder Care Homecare</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #185FA5; --blue-light: #eaf2fb; --blue-border: #b5d4f4;
+      --green: #0a6648; --green-light: #eaf6f0; --green-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --purple: #3c3489; --purple-light: #f0eeff; --purple-border: #c8c0f0;
+      --teal: #0e5f6e; --teal-light: #e4f4f7; --teal-border: #8fd4df;
+      --bg: #f0ede8; --card: #fff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 13px; line-height: 1.5; min-height: 100vh; }
+    .page { max-width: 860px; margin: 0 auto; padding: 24px 16px 40px; }
 
-  /* HEADER */
-  .header { background: #fff; display: flex; align-items: center; justify-content: space-between; padding: 11px 16px; border-radius: 8px; margin-bottom: 11px; border: 1px solid #dedad2; gap: 10px; }
-  .brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
-  .logo-circle { width: 38px; height: 38px; border-radius: 50%; background: #185FA5; display: flex; align-items: center; justify-content: center; color: #dceefa; font-size: 11px; font-weight: 700; flex-shrink: 0; }
-  .brand-text { font-size: 15px; font-weight: 700; color: #111; }
-  .brand-sub { font-size: 10px; color: #888; margin-top: 2px; }
-  .badge { background: #eaf2fb; color: #185FA5; font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid #b5d4f4; white-space: nowrap; flex-shrink: 0; }
+    /* HEADER */
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 13px; }
+    .logo { width: 44px; height: 44px; border-radius: 10px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 17px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+    .header-badge { background: var(--blue-light); color: var(--blue); font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--blue-border); white-space: nowrap; }
 
-  /* LAYOUT */
-  .row-grid { display: grid; gap: 10px; margin-bottom: 10px; }
-  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-  .cols-2 { grid-template-columns: 1fr 1fr; }
-  .cols-2-1 { grid-template-columns: 2fr 1fr; }
-  .cols-1-2 { grid-template-columns: 1fr 2fr; }
-  .ops-stack { display: flex; flex-direction: column; gap: 10px; }
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #185FA5 0%, #0e5f6e 100%); border-radius: 12px; padding: 28px 28px 24px; margin-bottom: 20px; color: #fff; }
+    .hero-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.7; margin-bottom: 8px; }
+    .hero-title { font-size: 26px; font-weight: 700; line-height: 1.15; margin-bottom: 8px; }
+    .hero-desc { font-size: 12px; opacity: 0.85; line-height: 1.7; max-width: 520px; }
 
-  /* CARDS */
-  .card { background: #fff; border: 1px solid #dedad2; border-radius: 8px; padding: 10px 12px; }
-  .card-inner { display: flex; flex-direction: column; gap: 0; }
+    /* SECTION HEADING */
+    .section-heading { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
 
-  /* SECTION TITLES */
-  .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; }
-  .st-blue   { color: #185FA5; border-color: #b5d4f4; }
-  .st-teal   { color: #0a6648; border-color: #9fdfc8; }
-  .st-amber  { color: #7a4700; border-color: #f5c97a; }
-  .st-red    { color: #9a2a2a; border-color: #f5b8b8; }
-  .st-purple { color: #3c3489; border-color: #c8c0f0; }
-  .st-green  { color: #2e6010; border-color: #b8dc90; }
-  .st-slate  { color: #3a4a5a; border-color: #b0bcc8; }
-  .st-orange { color: #8a3a00; border-color: #f5c090; }
+    /* NAV GRID */
+    .nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
 
-  /* DIVIDER */
-  .section-divider { border: none; border-top: 1px solid #ede9e2; margin: 9px 0; }
+    /* NAV CARDS */
+    .nav-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; text-decoration: none; color: var(--text); display: flex; flex-direction: column; gap: 6px; transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s; position: relative; overflow: hidden; }
+    .nav-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 10px 10px 0 0; }
+    .nav-card:hover { border-color: #b8b3aa; box-shadow: 0 3px 12px rgba(0,0,0,0.08); transform: translateY(-1px); }
+    .nav-card:active { transform: translateY(0); box-shadow: none; }
+    .nc-blue::before   { background: var(--blue); }
+    .nc-green::before  { background: var(--green); }
+    .nc-red::before    { background: var(--red); }
+    .nc-amber::before  { background: var(--amber); }
+    .nc-purple::before { background: var(--purple); }
+    .nc-teal::before   { background: var(--teal); }
+    .nc-slate::before  { background: var(--slate); }
+    .nav-card-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 4px; flex-shrink: 0; }
+    .icon-blue   { background: var(--blue-light); }
+    .icon-green  { background: var(--green-light); }
+    .icon-red    { background: var(--red-light); }
+    .icon-amber  { background: var(--amber-light); }
+    .icon-purple { background: var(--purple-light); }
+    .icon-teal   { background: var(--teal-light); }
+    .icon-slate  { background: var(--slate-light); }
+    .nav-card-title { font-size: 13.5px; font-weight: 700; color: #111; line-height: 1.2; }
+    .nav-card-desc  { font-size: 11px; color: var(--muted); line-height: 1.55; }
+    .nav-card-tags  { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+    .tag { display: inline-block; font-size: 9px; font-weight: 600; padding: 1px 7px; border-radius: 3px; border: 1px solid; }
+    .tag-blue   { background: var(--blue-light);   color: var(--blue);   border-color: var(--blue-border); }
+    .tag-green  { background: var(--green-light);  color: var(--green);  border-color: var(--green-border); }
+    .tag-amber  { background: var(--amber-light);  color: var(--amber);  border-color: var(--amber-border); }
+    .tag-red    { background: var(--red-light);    color: var(--red);    border-color: var(--red-border); }
+    .tag-purple { background: var(--purple-light); color: var(--purple); border-color: var(--purple-border); }
+    .tag-teal   { background: var(--teal-light);   color: var(--teal);   border-color: var(--teal-border); }
+    .tag-slate  { background: var(--slate-light);  color: var(--slate);  border-color: var(--slate-border); }
+    .nav-card-arrow { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #ccc; transition: color 0.15s, right 0.15s; }
+    .nav-card:hover .nav-card-arrow { color: #999; right: 13px; }
 
-  /* ROWS */
-  .kv { display: flex; justify-content: space-between; align-items: baseline; padding: 3.5px 0; font-size: 11px; border-bottom: 1px solid #f2efe9; }
-  .kv:last-child { border-bottom: none; }
-  .kl { color: #666; flex: 1; padding-right: 8px; }
-  .kv-val { font-weight: 600; font-size: 11px; color: #111; text-align: right; white-space: nowrap; }
-  .kv-val.flag { color: #9a2a2a; }
-  .kv-val.go   { color: #0a6648; }
+    /* QUICK BAR */
+    .quick-bar { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+    .qb-item { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .qb-num { font-size: 20px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 3px; }
+    .qb-label { font-size: 9.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
 
-  /* FEE BOXES */
-  .fee-row { display: flex; gap: 7px; margin-bottom: 7px; }
-  .fee-box { flex: 1; background: #f7f4ef; border-radius: 5px; padding: 7px 9px; border: 1px solid #e5e0d8; }
-  .fee-big { font-size: 19px; font-weight: 700; color: #111; line-height: 1.1; }
-  .fee-big.danger { color: #9a2a2a; }
-  .fee-label { font-size: 9px; color: #888; margin-top: 3px; line-height: 1.4; }
+    /* WEATHER ITEM */
+    .qb-weather-num { font-size: 17px; }
 
-  /* RULE BLOCKS */
-  .rule { background: #f7f4ef; border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid #e5e0d8; }
-  .rule:last-child { margin-bottom: 0; }
-  .rule strong { font-weight: 700; color: #111; }
-  .rule .warn { color: #9a2a2a; font-weight: 700; }
-  .rule .ok   { color: #0a6648; font-weight: 700; }
+    /* CALL ITEM */
+    .qb-call { text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 3px; background: var(--green-light); border: 1px solid var(--green-border); border-radius: 8px; padding: 8px 10px; width: 100%; transition: background 0.15s; }
+    .qb-call:hover { background: #d0eee4; }
+    .qb-call-num { font-size: 15px; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 2px; }
+    .qb-call-label { font-size: 9.5px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.6px; }
 
-  /* BULLETS */
-  .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 2.5px 0 2.5px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
-  .bul:last-child { border-bottom: none; }
-  .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
-  .bul strong { font-weight: 700; color: #111; }
+    /* LAST UPDATED */
+    .qb-updated { font-size: 16px; color: var(--slate); }
 
-  /* PILLS */
-  .pills { display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0 8px; }
-  .pill { display: inline-block; font-size: 9.5px; font-weight: 600; padding: 2px 7px; border-radius: 3px; }
-  .pill-amber  { background: #fef3e0; color: #7a4700; border: 1px solid #f5c97a; }
-  .pill-blue   { background: #eaf2fb; color: #185FA5; border: 1px solid #b5d4f4; }
-  .pill-red    { background: #fdf0f0; color: #9a2a2a; border: 1px solid #f5b8b8; }
-  .pill-green  { background: #eef6e6; color: #2e6010; border: 1px solid #b8dc90; }
-  .pill-slate  { background: #eef0f3; color: #3a4a5a; border: 1px solid #b0bcc8; }
+    /* FOOTER */
+    .footer { padding: 10px 16px; background: #fff; border-radius: 8px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 10px; color: #aaa; gap: 12px; flex-wrap: wrap; }
 
-  /* RATE TABLE */
-  .rate-table { width: 100%; border-collapse: collapse; font-size: 10.5px; margin-top: 6px; }
-  .rate-table th { background: #ede9e3; font-weight: 700; text-align: left; padding: 4px 6px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; border: 1px solid #dedad2; }
-  .rate-table th.num { text-align: right; }
-  .rate-table td { padding: 3.5px 6px; border: 1px solid #ede9e3; color: #333; }
-  .rate-table td.num { text-align: right; font-weight: 600; color: #111; }
-  .rate-table td.ot  { text-align: right; font-weight: 600; color: #7a4700; }
-  .rate-table tr:nth-child(even) td { background: #faf8f5; }
-  .rate-table .sec-row td { background: #eaf2fb; font-weight: 700; font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #185FA5; padding: 3px 6px; }
-  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-  /* STEP BLOCKS */
-  .step { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; border-bottom: 1px solid #f2efe9; }
-  .step:last-child { border-bottom: none; }
-  .step-num { width: 18px; height: 18px; border-radius: 50%; background: #185FA5; color: #fff; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-  .step-text { font-size: 11px; color: #333; line-height: 1.55; flex: 1; }
-  .step-text strong { font-weight: 700; color: #111; }
-
-  /* FOOTER */
-  .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid #dedad2; display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; }
-
-  /* ── TABLET: 2 columns ── */
-  @media (max-width: 768px) {
-    body { font-size: 13px; }
-    .page { padding: 10px 10px 10px; }
-    .cols-3 { grid-template-columns: 1fr 1fr; }
-    .cols-2 { grid-template-columns: 1fr 1fr; }
-    .brand-text { font-size: 14px; }
-    .kv { font-size: 12px; }
-    .kv-val { font-size: 12px; white-space: normal; text-align: right; }
-    .bul { font-size: 12px; }
-    .rule { font-size: 12px; }
-    .step-text { font-size: 12px; }
-    .rate-table { font-size: 11px; }
-    .fee-big { font-size: 20px; }
-  }
-
-  /* ── MOBILE: single column ── */
-  @media (max-width: 520px) {
-    body { font-size: 14px; }
-    .page { padding: 8px 8px 16px; }
-
-    /* All multi-col grids collapse to 1 column */
-    .cols-3,
-    .cols-2,
-    .cols-2-1,
-    .cols-1-2 { grid-template-columns: 1fr; }
-
-    /* Ops stack was an inline flex column — stays same, just full width */
-    .ops-stack { width: 100%; }
-
-    /* Header stacks vertically on very small screens */
-    .header { flex-wrap: wrap; gap: 8px; padding: 10px 12px; }
-    .badge { font-size: 10px; }
-    .brand-text { font-size: 14px; }
-    .brand-sub { font-size: 11px; }
-
-    /* Cards get slightly more padding for finger targets */
-    .card { padding: 12px 13px; }
-
-    /* Key-value rows: let value wrap naturally */
-    .kv { align-items: flex-start; flex-wrap: wrap; gap: 2px; }
-    .kl { flex: 1 1 55%; font-size: 13px; }
-    .kv-val { font-size: 13px; white-space: normal; text-align: right; flex: 1 1 40%; }
-
-    /* Bullets and rules bigger for readability */
-    .bul { font-size: 13px; padding: 4px 0 4px 16px; }
-    .rule { font-size: 13px; padding: 9px 11px; }
-    .step-text { font-size: 13px; }
-
-    /* Section titles slightly larger */
-    .st { font-size: 10px; letter-spacing: 0.8px; padding-bottom: 7px; margin-bottom: 9px; }
-
-    /* Fee boxes: keep side by side but scale up */
-    .fee-big { font-size: 22px; }
-    .fee-label { font-size: 10px; }
-
-    /* Pills bigger touch targets */
-    .pill { font-size: 11px; padding: 3px 9px; }
-
-    /* Rate table: horizontal scroll on mobile */
-    .rate-table { font-size: 11.5px; }
-    .rate-table th { font-size: 10px; padding: 5px 6px; }
-    .rate-table td { padding: 5px 6px; }
-
-    /* Footer stacks */
-    .footer { flex-direction: column; gap: 4px; font-size: 10px; text-align: center; }
-  }
-</style>
+    /* TABLET */
+    @media (max-width: 640px) {
+      .nav-grid { grid-template-columns: 1fr; }
+      .quick-bar { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 22px; }
+      .nav-card-arrow { display: none; }
+    }
+    @media (max-width: 400px) {
+      .page { padding: 12px 10px 28px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .hero { padding: 20px 18px; }
+      .footer { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 <div class="page">
@@ -177,218 +120,110 @@
   <!-- HEADER -->
   <div class="header">
     <div class="brand">
-      <div class="logo-circle">EC</div>
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
       <div>
         <div class="brand-text">Elder Care Homecare, Inc.</div>
         <div class="brand-sub">NY &mdash; NYC &middot; Westchester / Rockland &middot; Long Island</div>
       </div>
     </div>
-    <div class="badge">Sales Field Reference &middot; rev 2.26.2</div>
+    <div class="header-badge">Sales Resource Hub</div>
   </div>
 
-  <!-- ═══ ROW 1: 3 columns ═══ -->
-  <div class="row-grid cols-3">
-
-    <!-- COL 1: Key Fees & Charges -->
-    <div class="card">
-      <div class="st st-blue">Key Fees &amp; Charges</div>
-      <div class="fee-row">
-        <div class="fee-box"><div class="fee-big">$150</div><div class="fee-label">Expedited start (&le;12 hrs)</div></div>
-        <div class="fee-box"><div class="fee-big">1.5%</div><div class="fee-label">Monthly late fee (15+ days)</div></div>
-      </div>
-      <div class="fee-row">
-        <div class="fee-box"><div class="fee-big">3%</div><div class="fee-label">CC surcharge (non-refundable)</div></div>
-        <div class="fee-box"><div class="fee-big">$200<span style="font-size:12px">/mo</span></div><div class="fee-label">LTCI claim mgmt (1 hr)</div></div>
-      </div>
-      <div class="kv"><span class="kl">Deposit</span><span class="kv-val">1 week estimated cost</span></div>
-      <div class="kv"><span class="kl">Billing cycle</span><span class="kv-val">Weekly, due on receipt</span></div>
-      <div class="kv"><span class="kl">OT threshold</span><span class="kv-val">1.5&times; after 40 hrs/week</span></div>
-      <div class="kv"><span class="kl">Holiday rate</span><span class="kv-val">1.5&times; (36-hr window)</span></div>
-      <div class="kv"><span class="kl">Care mgmt billing</span><span class="kv-val">1st hr flat &middot; 15-min after</span></div>
-      <div class="kv"><span class="kl">Travel &gt;15 mi</span><span class="kv-val">Full hourly rate</span></div>
-      <div class="kv"><span class="kl">Live-in basis</span><span class="kv-val">13 hrs/day flat rate</span></div>
-      <div class="kv"><span class="kl">Live-in interrupt</span><span class="kv-val flag">$65/hr if unpaid break cut short</span></div>
-    </div>
-
-    <!-- COL 2: Cancellation & Changes + Scheduling Tiers -->
-    <div class="card">
-      <div class="st st-teal">Cancellation &amp; Changes</div>
-      <div class="rule"><strong>48-hour rule:</strong> less than 48 hrs notice to cancel or reduce &rarr; client billed <strong>full cost</strong> of all shifts in that window.</div>
-      <div class="rule"><strong>How to cancel:</strong> in writing or by phone to local office. <span class="warn">Never via the aide directly.</span></div>
-      <div class="rule"><strong>Scope change (down):</strong> <span class="ok">No PA required.</span> Handled by Operations.</div>
-      <div class="rule"><strong>Scope change (up):</strong> <span class="warn">Requires additional deposit + signed PA.</span></div>
-      <hr class="section-divider">
-      <div class="st st-amber">Scheduling Tiers</div>
-      <div class="kv"><span class="kl">Companion / PCA / HHA</span><span class="kv-val">4&ndash;5 &middot; 6&ndash;7 &middot; 8+ hrs</span></div>
-      <div class="kv"><span class="kl">Live-In</span><span class="kv-val">Daily flat rate</span></div>
-      <div class="kv"><span class="kl">Couples (hourly)</span><span class="kv-val">Agreed rate per couple</span></div>
-      <div class="kv"><span class="kl">Couples Live-In</span><span class="kv-val">Separate agreed rate</span></div>
-      <div class="kv"><span class="kl">LPN / RN (6+ hrs)</span><span class="kv-val">See rate card below</span></div>
-      <div class="kv"><span class="kl">Payment methods</span><span class="kv-val">ACH &middot; Visa &middot; MC &middot; Discover</span></div>
-    </div>
-
-    <!-- COL 3: Non-Solicitation + Scope Limits -->
-    <div class="card">
-      <div class="st st-purple">Non-Solicitation — Know the Numbers</div>
-      <div class="fee-row">
-        <div class="fee-box"><div class="fee-big danger">$45K</div><div class="fee-label">Hire any aide / care provider</div></div>
-        <div class="fee-box"><div class="fee-big danger">$95K</div><div class="fee-label">Hire an RN or LPN</div></div>
-      </div>
-      <div class="rule">Applies during service <strong>and up to 1 year after</strong> end of services. Includes hiring through another agency. Auto-charged to payment method on file.</div>
-      <hr class="section-divider">
-      <div class="st st-red">Scope Limits — Aides Cannot</div>
-      <div class="bul">Sort, touch, crush, administer, or manage medications</div>
-      <div class="bul">Provide pet care without a separately negotiated rate</div>
-      <div class="bul">Accept cash, valuables, or banking info from client</div>
-      <div class="bul">Drive clients — requires waiver + driving rate + client vehicle &amp; insurance</div>
-      <div class="bul">Perform housekeeping for anyone not on service</div>
-    </div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Sales Team</div>
+    <div class="hero-title">Quick Reference Library</div>
+    <div class="hero-desc">All field guides, rate cards, clinical references, and process documentation for the Elder Care sales team. Select a guide below to open it.</div>
   </div>
 
-  <!-- ═══ ROW 2: Rate Card (wide) + Add-Ons & Ops (narrower) ═══ -->
-  <div class="row-grid cols-2">
+  <!-- QUICK BAR -->
+  <div class="quick-bar">
 
-    <!-- LEFT: Rate Card -->
-    <div class="card">
-      <div class="st st-slate">ACH Rate Card &nbsp;<span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:9px;color:#aaa">(CC rate = ACH &times; 1.03)</span></div>
-      <div class="table-scroll">
-      <table class="rate-table">
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th class="num">ACH Rate</th>
-            <th class="num">OT / Holiday</th>
-            <th class="num">CC Rate</th>
-            <th class="num">CC OT / Hol</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td colspan="5" class="sec-row">Companion / PCA / HHA</td></tr>
-          <tr><td>4&ndash;5 Hours</td><td class="num">$45</td><td class="ot">$67.50</td><td class="num">$46.35</td><td class="ot">$69.52</td></tr>
-          <tr><td>6&ndash;7 Hours</td><td class="num">$40</td><td class="ot">$60.00</td><td class="num">$41.20</td><td class="ot">$61.80</td></tr>
-          <tr><td>8+ Hours</td><td class="num">$38</td><td class="ot">$57.00</td><td class="num">$39.14</td><td class="ot">$58.71</td></tr>
-          <tr><td>Live-In Care (daily)</td><td class="num">$525</td><td class="ot">$787.50</td><td class="num">$540.75</td><td class="ot">$811.12</td></tr>
-          <tr><td>Couples (Hourly)</td><td class="num">$55</td><td class="ot">$82.50</td><td class="num">$56.65</td><td class="ot">$84.97</td></tr>
-          <tr><td>Couples Care Live-In</td><td class="num">$650</td><td class="ot">$975.00</td><td class="num">$669.50</td><td class="ot">$1,004.25</td></tr>
-          <tr><td colspan="5" class="sec-row">Nursing</td></tr>
-          <tr><td>LPN (6+ Hours)</td><td class="num">$95</td><td class="ot">$142.50</td><td class="num">$97.85</td><td class="ot">$146.77</td></tr>
-          <tr><td>RN (6+ Hours)</td><td class="num">$135</td><td class="ot">$202.50</td><td class="num">$139.05</td><td class="ot">$208.57</td></tr>
-          <tr><td>RN Care Mgmt (1st Hr)</td><td class="num">$250</td><td class="ot">$375.00</td><td class="num">$257.50</td><td class="ot">$386.25</td></tr>
-          <tr><td>RN (2nd+ Hour)</td><td class="num">$150</td><td class="ot">$225.00</td><td class="num">$154.50</td><td class="ot">$231.75</td></tr>
-          <tr><td>Medication Pre-pour Visit</td><td class="num">$250</td><td class="ot">$375.00</td><td class="num">$257.50</td><td class="ot">$386.25</td></tr>
-          <tr><td>SW Care Mgmt (Hourly)</td><td class="num">$250</td><td class="ot">$375.00</td><td class="num">$257.50</td><td class="ot">$386.25</td></tr>
-          <tr><td colspan="5" class="sec-row">Add-On Rates (entered in SA "Other" box)</td></tr>
-          <tr><td>Pet Care</td><td class="num">$5/hr</td><td class="ot">—</td><td class="num">$5.15/hr</td><td class="ot">—</td></tr>
-          <tr><td>Driving Rate (aide as driver)</td><td class="num">$5/hr</td><td class="ot">—</td><td class="num">$5.15/hr</td><td class="ot">—</td></tr>
-          <tr><td>Expedited Start (&le;12 hrs)</td><td class="num">$150</td><td class="ot">—</td><td class="num">$154.50</td><td class="ot">—</td></tr>
-          <tr><td>Caregiver Transport (Uber etc.)</td><td class="num">At cost</td><td class="ot">—</td><td class="num">At cost</td><td class="ot">—</td></tr>
-          <tr><td>Long Transport / Parking</td><td class="num">Negotiated</td><td class="ot">—</td><td class="num">Negotiated</td><td class="ot">—</td></tr>
-        </tbody>
-      </table>
-      </div>
+    <div class="qb-item">
+      <div class="qb-num">4</div>
+      <div class="qb-label">Reference Guides</div>
     </div>
 
-    <!-- RIGHT: Ops column (3 stacked cards) -->
-    <div class="ops-stack">
-
-      <!-- Payment Authorization -->
-      <div class="card">
-        <div class="st st-green">When to Use a Payment Authorization (PA)</div>
-        <div class="kv"><span class="kl">Change in payment type</span><span class="kv-val">e.g. ACH &rarr; CC</span></div>
-        <div class="kv"><span class="kl">Change in payee</span><span class="kv-val">Different person paying</span></div>
-        <div class="kv"><span class="kl">Larger deposit required</span><span class="kv-val">Service level increase</span></div>
-        <div class="kv"><span class="kl">Service change upward</span><span class="kv-val flag">Extra deposit + signed PA</span></div>
-        <div class="rule" style="margin-top:7px"><span class="ok">Service decrease</span> does <strong>not</strong> require a PA — handled by Operations only.</div>
-      </div>
-
-      <!-- Approval & Ad Hoc -->
-      <div class="card">
-        <div class="st st-slate">Approval Process &amp; Ad Hoc Requests</div>
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text">Sales rep identifies a one-off or non-standard request (rate exception, add-on, etc.).</div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text">Rep submits to <strong>Local Director of Operations.</strong></div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text">Director approves or rejects <strong>within 1 business day.</strong></div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-text">After SOC, all ad hoc requests go to <strong>Local Director of Operations</strong> — not the sales rep.</div>
-        </div>
-      </div>
-
-      <!-- Driving & Special Policies -->
-      <div class="card">
-        <div class="st st-teal">Driving &amp; Special Policies</div>
-        <div class="rule"><strong>Driving:</strong> EC does not recommend aides drive clients. If requested &rarr; driving waiver + <strong>$5/hr driving rate</strong> + client provides vehicle and insurance.</div>
-        <div class="rule"><strong>Cash / valuables:</strong> EC strongly advises against. If client chooses to share &rarr; EC bears no liability for loss, misuse, or unauthorized transactions.</div>
-        <div class="rule"><strong>Hazard / special circumstances:</strong> EC may adjust service level during medical emergencies, severe weather, or national emergencies. Hazard Pay may apply.</div>
-      </div>
-
+    <div class="qb-item">
+      <div class="qb-num qb-weather-num">&#9728;&#65039; 35&deg;F</div>
+      <div class="qb-label">NYC &middot; Sunny</div>
     </div>
+
+    <div class="qb-item" style="width:100%;">
+      <a class="qb-call" href="tel:9178904503">
+        <div class="qb-call-num">&#128222; Questions?</div>
+        <div class="qb-call-label">Nic &middot; 917.890.4503</div>
+      </a>
+    </div>
+
+    <div class="qb-item">
+      <div class="qb-num qb-updated">Mar 18</div>
+      <div class="qb-label">Last Updated &middot; 2026</div>
+    </div>
+
   </div>
 
-  <!-- ═══ ROW 3: Live-In + Medication | Holidays | Additional Notes ═══ -->
-  <div class="row-grid cols-3">
+  <!-- NAV GRID -->
+  <div class="section-heading">Reference Guides</div>
+  <div class="nav-grid">
 
-    <!-- Live-In + Medication -->
-    <div class="card">
-      <div class="st st-green">Live-In Rules</div>
-      <div class="kv"><span class="kl">Work hours counted</span><span class="kv-val">13 hrs/day</span></div>
-      <div class="kv"><span class="kl">Sleep allowance</span><span class="kv-val">8 hrs (unpaid)</span></div>
-      <div class="kv"><span class="kl">Meal breaks</span><span class="kv-val">3 &times; 1-hr unpaid</span></div>
-      <div class="kv"><span class="kl">If break interrupted</span><span class="kv-val flag">$65/hr for full period</span></div>
-      <div class="kv"><span class="kl">Ongoing interruptions</span><span class="kv-val">May convert to 24-hr hourly care</span></div>
-      <div class="kv"><span class="kl">Client must provide</span><span class="kv-val">Private room + utilities</span></div>
-      <hr class="section-divider">
-      <div class="st st-blue">Medication Rules</div>
-      <div class="bul">Aides may only <strong>remind</strong> clients to take <strong>pre-sorted</strong> meds</div>
-      <div class="bul">All medication mgmt must be performed by a <strong>licensed nurse</strong></div>
-    </div>
-
-    <!-- Holidays -->
-    <div class="card">
-      <div class="st st-amber">Recognized Holidays (1.5&times; rate &middot; 36-hr window)</div>
-      <div class="pills">
-        <span class="pill pill-amber">New Year's Day</span>
-        <span class="pill pill-amber">MLK Jr. Day</span>
-        <span class="pill pill-amber">Presidents' Day</span>
-        <span class="pill pill-amber">Memorial Day</span>
-        <span class="pill pill-amber">Juneteenth</span>
-        <span class="pill pill-amber">Independence Day</span>
-        <span class="pill pill-amber">Labor Day</span>
-        <span class="pill pill-amber">Thanksgiving</span>
-        <span class="pill pill-amber">Christmas Eve (full day)</span>
-        <span class="pill pill-amber">Christmas Day</span>
-        <span class="pill pill-amber">New Year's Eve (full day)</span>
-        <span class="pill pill-amber">Easter Day</span>
+    <a class="nav-card nc-blue" href="eldercare_cheatsheet_v4.html">
+      <div class="nav-card-icon icon-blue">&#128203;</div>
+      <div class="nav-card-title">Service Agreement &amp; Rate Card</div>
+      <div class="nav-card-desc">Fees, billing rules, cancellation policy, ACH &amp; CC rate card, add-ons, live-in rules, and holidays.</div>
+      <div class="nav-card-tags">
+        <span class="tag tag-blue">Rates</span>
+        <span class="tag tag-blue">Billing</span>
+        <span class="tag tag-blue">Cancellation</span>
+        <span class="tag tag-blue">Live-In</span>
       </div>
-      <div class="rule">Window: <strong>8 p.m. evening before &rarr; 8 a.m. day after.</strong> Rates also subject to change during extreme weather, national emergencies, or highly communicable disease events (Hazard Pay).</div>
-    </div>
+      <span class="nav-card-arrow">›</span>
+    </a>
 
-    <!-- Add-On Notes + Couples -->
-    <div class="card">
-      <div class="st st-orange">Add-On Items — Field Notes</div>
-      <div class="kv"><span class="kl">Pet care</span><span class="kv-val">$5/hr — must be agreed by aide &amp; client</span></div>
-      <div class="kv"><span class="kl">Driving rate</span><span class="kv-val">$5/hr + waiver required</span></div>
-      <div class="kv"><span class="kl">Expedited start (&le;12 hrs)</span><span class="kv-val">$150 one-time</span></div>
-      <div class="kv"><span class="kl">Caregiver transport</span><span class="kv-val">At cost (Uber etc.)</span></div>
-      <div class="kv"><span class="kl">Long transport / parking</span><span class="kv-val">Negotiated</span></div>
-      <div class="rule" style="margin-top:8px">All add-ons are entered in the <strong>"Other"</strong> box of the Service Agreement.</div>
-      <hr class="section-divider">
-      <div class="st st-slate">Couples Care Notes</div>
-      <div class="bul">Rates change when aide serves multiple clients — must be agreed in advance</div>
-      <div class="bul">Aides will <strong>not</strong> provide services to anyone in the home who is not on service</div>
-      <div class="bul">Couples Live-In rate: <strong>$650/day</strong> ACH &middot; <strong>$669.50/day</strong> CC</div>
-    </div>
+    <a class="nav-card nc-teal" href="rn_vs_lpn_cheatsheet.html">
+      <div class="nav-card-icon icon-teal">&#129658;</div>
+      <div class="nav-card-title">RN vs LPN &mdash; NY Home Care</div>
+      <div class="nav-card-desc">Scope of practice, clinical duties, task authorization chart, LPN restrictions, and 10 NYCRR Part 766 overview.</div>
+      <div class="nav-card-tags">
+        <span class="tag tag-teal">Clinical</span>
+        <span class="tag tag-teal">Nursing</span>
+        <span class="tag tag-teal">NY Regulations</span>
+      </div>
+      <span class="nav-card-arrow">›</span>
+    </a>
+
+    <a class="nav-card nc-red" href="lead_distribution_cheatsheet.html">
+      <div class="nav-card-icon icon-red">&#9889;</div>
+      <div class="nav-card-title">Lead Distribution Process</div>
+      <div class="nav-card-desc">15-min acknowledge, 30-min call, follow-up rules, email thread protocol, HubSpot logging, and the full response flow.</div>
+      <div class="nav-card-tags">
+        <span class="tag tag-red">Leads</span>
+        <span class="tag tag-red">Response Times</span>
+        <span class="tag tag-red">HubSpot</span>
+      </div>
+      <span class="nav-card-arrow">›</span>
+    </a>
+
+    <a class="nav-card nc-purple" href="sales_rep_expectations.html">
+      <div class="nav-card-icon icon-purple">&#128202;</div>
+      <div class="nav-card-title">Sales Rep Expectations</div>
+      <div class="nav-card-desc">HubSpot logging rules, visit planner requirements, account tier visit cadences, and WellSky referral source obligations.</div>
+      <div class="nav-card-tags">
+        <span class="tag tag-purple">HubSpot</span>
+        <span class="tag tag-purple">WellSky</span>
+        <span class="tag tag-purple">Visit Planner</span>
+      </div>
+      <span class="nav-card-arrow">›</span>
+    </a>
 
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63210a0f0f0a0d0423060f070611000211060b004d000c0e">[email&#160;protected]</a> &mi
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>For internal sales use only</span>
+  </div>
+
+</div>
+</body>
+</html>
