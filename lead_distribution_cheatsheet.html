@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>Lead Distribution Process · Elder Care Sales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #185FA5; --blue-light: #eaf2fb; --blue-border: #b5d4f4;
+      --green: #0a6648; --green-light: #eaf6f0; --green-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --purple: #3c3489; --purple-light: #f0eeff; --purple-border: #c8c0f0;
+      --bg: #f0ede8; --card: #fff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8; --divider: #ede9e2;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 12px; line-height: 1.5; }
+    .page { max-width: 980px; margin: 0 auto; padding: 14px 14px 20px; }
+
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 15px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .badge { background: var(--blue-light); color: var(--blue); font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--blue-border); white-space: nowrap; flex-shrink: 0; }
+
+    .intro { background: linear-gradient(135deg, #185FA5 0%, #3c3489 100%); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .intro-stat { color: #fff; text-align: center; }
+    .intro-num { font-size: 32px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+    .intro-unit { font-size: 11px; font-weight: 700; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.8px; }
+    .intro-desc { font-size: 10px; opacity: 0.7; margin-top: 3px; }
+
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px; }
+    .card.blue-card   { border-top: 3px solid var(--blue); }
+    .card.green-card  { border-top: 3px solid var(--green); }
+    .card.red-card    { border-top: 3px solid var(--red); }
+    .card.amber-card  { border-top: 3px solid var(--amber); }
+    .card.slate-card  { border-top: 3px solid var(--slate); }
+    .card.purple-card { border-top: 3px solid var(--purple); }
+
+    .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; display: flex; align-items: center; gap: 6px; }
+    .st-blue   { color: var(--blue);   border-color: var(--blue-border); }
+    .st-green  { color: var(--green);  border-color: var(--green-border); }
+    .st-red    { color: var(--red);    border-color: var(--red-border); }
+    .st-amber  { color: var(--amber);  border-color: var(--amber-border); }
+    .st-slate  { color: var(--slate);  border-color: var(--slate-border); }
+    .st-purple { color: var(--purple); border-color: var(--purple-border); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue { background: var(--blue); } .dot-green { background: var(--green); }
+    .dot-red  { background: var(--red);  } .dot-amber { background: var(--amber); }
+    .dot-slate { background: var(--slate); } .dot-purple { background: var(--purple); }
+
+    .kv { display: flex; justify-content: space-between; align-items: flex-start; padding: 3.5px 0; font-size: 11px; border-bottom: 1px solid #f2efe9; gap: 8px; }
+    .kv:last-child { border-bottom: none; }
+    .kl { color: var(--muted); flex: 1; }
+    .kv-val { font-weight: 600; color: #111; text-align: right; }
+    .kv-val.flag { color: var(--red); }
+    .kv-val.go   { color: var(--green); }
+    .kv-val.warn { color: var(--amber); }
+
+    .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 3px 0 3px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
+    .bul:last-child { border-bottom: none; }
+    .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
+    .bul strong { font-weight: 700; color: #111; }
+
+    .rule { background: var(--subtle); border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid var(--subtle-border); }
+    .rule:last-child { margin-bottom: 0; }
+    .rule strong { font-weight: 700; color: #111; }
+    .rule.red-rule    { background: var(--red-light);    border-color: var(--red-border); }
+    .rule.green-rule  { background: var(--green-light);  border-color: var(--green-border); }
+    .rule.amber-rule  { background: var(--amber-light);  border-color: var(--amber-border); }
+    .rule.blue-rule   { background: var(--blue-light);   border-color: var(--blue-border); }
+    .rule.purple-rule { background: var(--purple-light); border-color: var(--purple-border); }
+
+    /* ARROW FLOW */
+    .flow { display: flex; flex-direction: column; }
+    .flow-step { display: flex; gap: 12px; }
+    .flow-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 56px; }
+    .flow-badge { width: 56px; border-radius: 7px; padding: 5px 4px; text-align: center; line-height: 1.15; color: #fff; background: var(--blue); }
+    .flow-badge .fb-num  { font-size: 17px; font-weight: 700; display: block; }
+    .flow-badge .fb-unit { font-size: 8px; font-weight: 600; opacity: 0.85; display: block; text-transform: uppercase; letter-spacing: 0.4px; }
+    .flow-badge.red-b    { background: var(--red); }
+    .flow-badge.amber-b  { background: var(--amber); }
+    .flow-badge.green-b  { background: var(--green); }
+    .flow-badge.purple-b { background: var(--purple); }
+    .flow-badge.slate-b  { background: var(--slate); }
+    .flow-connector { display: flex; flex-direction: column; align-items: center; width: 56px; flex-shrink: 0; padding: 2px 0; }
+    .flow-line { width: 2px; flex: 1; background: #ccc8c0; min-height: 8px; }
+    .flow-arrowhead { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #b0aba2; margin-bottom: 2px; }
+    .flow-content { flex: 1; padding: 2px 0 12px 0; }
+    .flow-title { font-size: 12px; font-weight: 700; color: #111; margin-bottom: 3px; line-height: 1.3; }
+    .flow-body  { font-size: 11px; color: #444; line-height: 1.6; }
+    .flow-body strong { font-weight: 700; color: #111; }
+    .chip-row { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 5px; }
+    .chip { display: inline-flex; align-items: center; border-radius: 4px; padding: 2px 7px; font-size: 9.5px; font-weight: 700; border: 1px solid; }
+    .chip-blue   { background: var(--blue-light);   color: var(--blue);   border-color: var(--blue-border); }
+    .chip-red    { background: var(--red-light);     color: var(--red);    border-color: var(--red-border); }
+    .chip-amber  { background: var(--amber-light);   color: var(--amber);  border-color: var(--amber-border); }
+    .chip-green  { background: var(--green-light);   color: var(--green);  border-color: var(--green-border); }
+    .chip-purple { background: var(--purple-light);  color: var(--purple); border-color: var(--purple-border); }
+
+    .tl-tag { display: inline-block; font-size: 8.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 1px 6px; border-radius: 3px; margin-left: 5px; vertical-align: middle; border: 1px solid; }
+    .tag-req  { background: var(--red-light);    color: var(--red);    border-color: var(--red-border); }
+    .tag-warn { background: var(--amber-light);  color: var(--amber);  border-color: var(--amber-border); }
+    .tag-sys  { background: var(--blue-light);   color: var(--blue);   border-color: var(--blue-border); }
+
+    .sdiv { border: none; border-top: 1px solid var(--divider); margin: 9px 0; }
+    .section-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 6px; margin-top: 2px; }
+
+    .checklist { list-style: none; }
+    .checklist li { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; border-bottom: 1px solid #f2efe9; font-size: 11px; color: #333; line-height: 1.55; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li strong { font-weight: 700; color: #111; }
+    .cb { width: 15px; height: 15px; border-radius: 3px; border: 1.5px solid #b0bcc8; flex-shrink: 0; margin-top: 1px; }
+
+    .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      body { font-size: 13px; }
+      .page { padding: 10px; }
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .intro-inner { grid-template-columns: 1fr 1fr; }
+      .bul, .rule, .flow-body, .kv { font-size: 12px; }
+    }
+    @media (max-width: 520px) {
+      body { font-size: 14px; }
+      .page { padding: 8px 8px 18px; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .intro-inner { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .badge { align-self: flex-start; }
+      .card { padding: 12px 13px; }
+      .kv { flex-wrap: wrap; }
+      .kl { flex: 1 1 55%; font-size: 13px; }
+      .kv-val { font-size: 13px; }
+      .bul { font-size: 13px; padding: 4px 0 4px 16px; }
+      .rule, .flow-body { font-size: 13px; }
+      .st { font-size: 10px; }
+      .footer { flex-direction: column; text-align: center; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
+      <div>
+        <div class="brand-text">Elder Care Homecare, Inc.</div>
+        <div class="brand-sub">Sales Operations Reference</div>
+      </div>
+    </div>
+    <div class="badge">Quick Ref &middot; Lead Distribution Process</div>
+  </div>
+
+  <!-- INTRO BANNER -->
+  <div class="intro">
+    <div class="intro-inner">
+      <div class="intro-stat">
+        <div class="intro-num">15</div>
+        <div class="intro-unit">Minutes</div>
+        <div class="intro-desc">Acknowledge receipt in email thread</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-num">30</div>
+        <div class="intro-unit">Minutes</div>
+        <div class="intro-desc">Place first call to lead</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-num">3&times;</div>
+        <div class="intro-unit">Min. Attempts</div>
+        <div class="intro-desc">Over 5 business days if no answer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 1: 3 summary cards -->
+  <div class="grid-3">
+
+    <div class="card blue-card">
+      <div class="st st-blue"><span class="dot dot-blue"></span>How Leads Are Assigned</div>
+      <div class="kv"><span class="kl">Territory-based</span><span class="kv-val go">By rep territory</span></div>
+      <div class="kv"><span class="kl">Account-based</span><span class="kv-val go">By assigned accounts</span></div>
+      <div class="kv"><span class="kl">Other leads</span><span class="kv-val">Round robin rotation</span></div>
+      <hr class="sdiv">
+      <div class="section-label">Where All Actions Happen</div>
+      <div class="rule blue-rule">Every acknowledgement, confirmation, and outcome update must be done by <strong>replying to the original lead email thread.</strong> Do not start new emails.</div>
+    </div>
+
+    <div class="card red-card">
+      <div class="st st-red"><span class="dot dot-red"></span>If You Miss the Window</div>
+      <div class="rule red-rule"><strong>Non-responsive or unable to reach out</strong> within the allotted time? The lead is <strong>reassigned to the next sales rep immediately.</strong></div>
+      <div class="kv"><span class="kl">Acknowledge window</span><span class="kv-val flag">15 min — hard limit</span></div>
+      <div class="kv"><span class="kl">First call window</span><span class="kv-val flag">30 min — hard limit</span></div>
+      <div class="kv"><span class="kl">Consequence</span><span class="kv-val flag">Lead reassigned immediately</span></div>
+    </div>
+
+    <div class="card amber-card">
+      <div class="st st-amber"><span class="dot dot-amber"></span>If Lead Doesn't Answer</div>
+      <div class="rule amber-rule">Do <strong>not</strong> give up after one attempt. Follow up a minimum of <strong>3 times over the next 5 business days.</strong></div>
+      <div class="kv"><span class="kl">Min. follow-up attempts</span><span class="kv-val warn">3 contacts</span></div>
+      <div class="kv"><span class="kl">Timeframe</span><span class="kv-val warn">5 business days</span></div>
+      <div class="kv"><span class="kl">After exhausted</span><span class="kv-val">Reply in thread with outcome</span></div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Flow + Right Column -->
+  <div class="grid-2">
+
+    <!-- ARROW FLOW -->
+    <div class="card slate-card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Lead Response Flow</div>
+      <div class="flow">
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge slate-b"><span class="fb-num">⊙</span><span class="fb-unit">Start</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Lead Received <span class="tl-tag tag-sys">System</span></div>
+            <div class="flow-body">Assigned via territory, account match, or round robin. Arrives in your queue and <strong>email inbox.</strong></div>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrowhead"></div></div>
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge"><span class="fb-num">15</span><span class="fb-unit">Min</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Acknowledge Receipt <span class="tl-tag tag-req">Required</span></div>
+            <div class="flow-body"><strong>Reply to the lead email thread</strong> confirming you have received and accepted the lead.</div>
+            <div class="chip-row">
+              <span class="chip chip-blue">✉ Reply in email thread</span>
+              <span class="chip chip-red">Miss = reassigned</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrowhead"></div></div>
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge red-b"><span class="fb-num">30</span><span class="fb-unit">Min</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Call the Lead <span class="tl-tag tag-req">Required</span></div>
+            <div class="flow-body">Place your first outbound call. <strong>Missing this window results in immediate reassignment.</strong></div>
+            <div class="chip-row">
+              <span class="chip chip-red">Miss = reassigned</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrowhead"></div></div>
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge green-b"><span class="fb-num">✔</span><span class="fb-unit">Confirm</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Confirm Outreach <span class="tl-tag tag-req">Required</span></div>
+            <div class="flow-body"><strong>Reply to the lead email thread</strong> confirming that outreach was made or attempted.</div>
+            <div class="chip-row">
+              <span class="chip chip-blue">✉ Reply in email thread</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrowhead"></div></div>
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge amber-b"><span class="fb-num">3&times;</span><span class="fb-unit">5 Days</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Follow Up if No Answer <span class="tl-tag tag-warn">If Needed</span></div>
+            <div class="flow-body">No answer? Contact a minimum of <strong>3 times over 5 business days</strong> before closing out.</div>
+            <div class="chip-row">
+              <span class="chip chip-amber">If no answer only</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrowhead"></div></div>
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge purple-b"><span class="fb-num">✉</span><span class="fb-unit">Close</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Reply with Outcome <span class="tl-tag tag-req">Required</span></div>
+            <div class="flow-body">When lead is finished — won, lost, or no response — <strong>reply to the email thread</strong> with the final outcome.</div>
+            <div class="chip-row">
+              <span class="chip chip-blue">✉ Reply in email thread</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrowhead"></div></div>
+
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-badge slate-b"><span class="fb-num">HS</span><span class="fb-unit">Log</span></div></div>
+          <div class="flow-content">
+            <div class="flow-title">Add to HubSpot <span class="tl-tag tag-req">Required</span></div>
+            <div class="flow-body">Every lead must be logged in HubSpot. <strong>No exceptions</strong> — required regardless of outcome.</div>
+            <div class="chip-row">
+              <span class="chip chip-purple">HubSpot entry mandatory</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+
+      <div class="card blue-card">
+        <div class="st st-blue"><span class="dot dot-blue"></span>Rules at a Glance</div>
+        <div class="kv"><span class="kl">Acknowledge lead</span><span class="kv-val flag">Reply in thread — 15 min</span></div>
+        <div class="kv"><span class="kl">First call to lead</span><span class="kv-val flag">Within 30 minutes</span></div>
+        <div class="kv"><span class="kl">Confirm outreach</span><span class="kv-val">Reply in thread — every time</span></div>
+        <div class="kv"><span class="kl">No answer follow-up</span><span class="kv-val warn">Min. 3&times; / 5 business days</span></div>
+        <div class="kv"><span class="kl">Miss the window?</span><span class="kv-val flag">Lead reassigned immediately</span></div>
+        <div class="kv"><span class="kl">Lead finished?</span><span class="kv-val">Reply in thread with outcome</span></div>
+        <div class="kv"><span class="kl">HubSpot entry</span><span class="kv-val flag">Mandatory — all leads</span></div>
+      </div>
+
+      <div class="card purple-card">
+        <div class="st st-purple"><span class="dot dot-purple"></span>The Email Thread Rule</div>
+        <div class="rule purple-rule"><strong>All acknowledgements live in the original lead email thread.</strong> Do not create new emails or communicate outside the thread for any step in this process.</div>
+        <div class="bul"><strong>Acknowledge receipt</strong> &rarr; reply in thread within 15 min</div>
+        <div class="bul"><strong>Confirm outreach</strong> &rarr; reply in thread after calling</div>
+        <div class="bul"><strong>Final outcome</strong> &rarr; reply in thread when lead is closed</div>
+      </div>
+
+      <div class="card green-card">
+        <div class="st st-green"><span class="dot dot-green"></span>Lead Completion Checklist</div>
+        <div class="rule" style="margin-bottom:8px;font-size:10px;">Use this before marking any lead as done.</div>
+        <ul class="checklist">
+          <li><div class="cb"></div><span>Replied in thread — acknowledged receipt within <strong>15 min</strong></span></li>
+          <li><div class="cb"></div><span>Placed first call within <strong>30 minutes</strong></span></li>
+          <li><div class="cb"></div><span>Replied in thread — confirmed outreach was made</span></li>
+          <li><div class="cb"></div><span>If no answer — followed up <strong>min. 3 times</strong></span></li>
+          <li><div class="cb"></div><span>All follow-ups done within <strong>5 business days</strong></span></li>
+          <li><div class="cb"></div><span>Replied in thread — <strong>final outcome logged</strong></span></li>
+          <li><div class="cb"></div><span>Lead added to <strong>HubSpot</strong></span></li>
+        </ul>
+      </div>
+
+      <div class="card red-card">
+        <div class="st st-red"><span class="dot dot-red"></span>Non-Negotiables</div>
+        <div class="rule red-rule"><strong>Speed is everything.</strong> A lead not acknowledged or called within the window is gone — reassigned to the next rep, no exceptions.</div>
+        <div class="rule red-rule"><strong>Close every loop in the thread.</strong> Every lead — won, lost, or unreachable — must be replied to in the original email thread and logged in HubSpot.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>For internal sales use only &middot; Lead Distribution Process</span>
+  </div>
+
+</div>
+</body>
+</html>

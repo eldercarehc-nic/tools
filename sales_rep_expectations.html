@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>Sales Rep Expectations · Elder Care Sales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #185FA5; --blue-light: #eaf2fb; --blue-border: #b5d4f4;
+      --green: #0a6648; --green-light: #eaf6f0; --green-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --purple: #3c3489; --purple-light: #f0eeff; --purple-border: #c8c0f0;
+      --teal: #0e5f6e; --teal-light: #e4f4f7; --teal-border: #8fd4df;
+      --bg: #f0ede8; --card: #fff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8; --divider: #ede9e2;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 12px; line-height: 1.5; }
+    .page { max-width: 980px; margin: 0 auto; padding: 14px 14px 20px; }
+
+    /* HEADER */
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 15px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .badge { background: var(--blue-light); color: var(--blue); font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--blue-border); white-space: nowrap; flex-shrink: 0; }
+
+    /* INTRO BANNER */
+    .intro { background: linear-gradient(135deg, #185FA5 0%, #0e5f6e 100%); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+    .intro-stat { color: #fff; text-align: center; }
+    .intro-num { font-size: 26px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+    .intro-unit { font-size: 10px; font-weight: 700; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.8px; }
+    .intro-desc { font-size: 9.5px; opacity: 0.7; margin-top: 3px; line-height: 1.4; }
+    .intro-sep { width: 1px; background: rgba(255,255,255,0.2); }
+
+    /* GRIDS */
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 10px; }
+
+    /* CARDS */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px; }
+    .card.blue-card   { border-top: 3px solid var(--blue); }
+    .card.green-card  { border-top: 3px solid var(--green); }
+    .card.red-card    { border-top: 3px solid var(--red); }
+    .card.amber-card  { border-top: 3px solid var(--amber); }
+    .card.slate-card  { border-top: 3px solid var(--slate); }
+    .card.purple-card { border-top: 3px solid var(--purple); }
+    .card.teal-card   { border-top: 3px solid var(--teal); }
+
+    /* SECTION TITLES */
+    .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; display: flex; align-items: center; gap: 6px; }
+    .st-blue   { color: var(--blue);   border-color: var(--blue-border); }
+    .st-green  { color: var(--green);  border-color: var(--green-border); }
+    .st-red    { color: var(--red);    border-color: var(--red-border); }
+    .st-amber  { color: var(--amber);  border-color: var(--amber-border); }
+    .st-slate  { color: var(--slate);  border-color: var(--slate-border); }
+    .st-purple { color: var(--purple); border-color: var(--purple-border); }
+    .st-teal   { color: var(--teal);   border-color: var(--teal-border); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue { background: var(--blue); } .dot-green { background: var(--green); }
+    .dot-red  { background: var(--red);  } .dot-amber { background: var(--amber); }
+    .dot-slate { background: var(--slate); } .dot-purple { background: var(--purple); }
+    .dot-teal  { background: var(--teal); }
+
+    /* SYSTEM LABEL */
+    .sys-label { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; border: 1px solid; margin-bottom: 8px; }
+    .sys-hubspot { background: #fff3eb; color: #c0501a; border-color: #f5b88a; }
+    .sys-wellsky { background: var(--teal-light); color: var(--teal); border-color: var(--teal-border); }
+
+    /* KV ROWS */
+    .kv { display: flex; justify-content: space-between; align-items: flex-start; padding: 3.5px 0; font-size: 11px; border-bottom: 1px solid #f2efe9; gap: 8px; }
+    .kv:last-child { border-bottom: none; }
+    .kl { color: var(--muted); flex: 1; }
+    .kv-val { font-weight: 600; color: #111; text-align: right; }
+    .kv-val.flag { color: var(--red); }
+    .kv-val.go   { color: var(--green); }
+    .kv-val.warn { color: var(--amber); }
+
+    /* BULLETS */
+    .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 3px 0 3px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
+    .bul:last-child { border-bottom: none; }
+    .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
+    .bul strong { font-weight: 700; color: #111; }
+    .bul.warn-bul::before { content: "⚠"; font-size: 9px; color: var(--amber); top: 4px; }
+    .bul.req-bul::before  { content: "✦"; font-size: 8px; color: var(--red);   top: 4px; }
+
+    /* RULE BLOCKS */
+    .rule { background: var(--subtle); border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid var(--subtle-border); }
+    .rule:last-child { margin-bottom: 0; }
+    .rule strong { font-weight: 700; color: #111; }
+    .rule.red-rule    { background: var(--red-light);    border-color: var(--red-border); }
+    .rule.green-rule  { background: var(--green-light);  border-color: var(--green-border); }
+    .rule.amber-rule  { background: var(--amber-light);  border-color: var(--amber-border); }
+    .rule.blue-rule   { background: var(--blue-light);   border-color: var(--blue-border); }
+    .rule.purple-rule { background: var(--purple-light); border-color: var(--purple-border); }
+    .rule.teal-rule   { background: var(--teal-light);   border-color: var(--teal-border); }
+
+    /* DEADLINE PILL */
+    .deadline { display: inline-flex; align-items: center; gap: 4px; font-size: 9.5px; font-weight: 700; padding: 2px 8px; border-radius: 20px; border: 1px solid; margin-top: 4px; }
+    .dl-red    { background: var(--red-light);   color: var(--red);   border-color: var(--red-border); }
+    .dl-amber  { background: var(--amber-light); color: var(--amber); border-color: var(--amber-border); }
+    .dl-blue   { background: var(--blue-light);  color: var(--blue);  border-color: var(--blue-border); }
+    .dl-green  { background: var(--green-light); color: var(--green); border-color: var(--green-border); }
+    .dl-teal   { background: var(--teal-light);  color: var(--teal);  border-color: var(--teal-border); }
+
+    /* VISIT TIER BLOCKS */
+    .tier { border-radius: 6px; padding: 8px 10px; margin-bottom: 6px; border: 1px solid; }
+    .tier:last-child { margin-bottom: 0; }
+    .tier-high { background: var(--red-light);   border-color: var(--red-border); }
+    .tier-reg  { background: var(--amber-light); border-color: var(--amber-border); }
+    .tier-risk { background: var(--subtle);      border-color: var(--subtle-border); }
+    .tier-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; }
+    .tier-label.tl-red   { color: var(--red); }
+    .tier-label.tl-amber { color: var(--amber); }
+    .tier-label.tl-slate { color: var(--slate); }
+    .tier-text { font-size: 11px; color: #333; line-height: 1.55; }
+    .tier-text strong { font-weight: 700; color: #111; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; }
+    .checklist li { display: flex; align-items: flex-start; gap: 8px; padding: 4px 0; border-bottom: 1px solid #f2efe9; font-size: 11px; color: #333; line-height: 1.55; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li strong { font-weight: 700; color: #111; }
+    .cb { width: 15px; height: 15px; border-radius: 3px; border: 1.5px solid #b0bcc8; flex-shrink: 0; margin-top: 1px; }
+
+    /* DIVIDER / LABEL */
+    .sdiv { border: none; border-top: 1px solid var(--divider); margin: 9px 0; }
+    .section-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 6px; margin-top: 2px; }
+
+    /* FOOTER */
+    .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; flex-wrap: wrap; }
+
+    /* TABLET */
+    @media (max-width: 768px) {
+      body { font-size: 13px; }
+      .page { padding: 10px; }
+      .grid-3, .grid-2-1 { grid-template-columns: 1fr 1fr; }
+      .intro-inner { grid-template-columns: 1fr 1fr; }
+      .bul, .rule, .kv { font-size: 12px; }
+    }
+    /* MOBILE */
+    @media (max-width: 520px) {
+      body { font-size: 14px; }
+      .page { padding: 8px 8px 18px; }
+      .grid-3, .grid-2, .grid-2-1 { grid-template-columns: 1fr; }
+      .intro-inner { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .badge { align-self: flex-start; }
+      .card { padding: 12px 13px; }
+      .kv { flex-wrap: wrap; }
+      .kl { flex: 1 1 55%; font-size: 13px; }
+      .kv-val { font-size: 13px; }
+      .bul { font-size: 13px; padding: 4px 0 4px 16px; }
+      .rule { font-size: 13px; }
+      .st { font-size: 10px; }
+      .footer { flex-direction: column; text-align: center; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
+      <div>
+        <div class="brand-text">Elder Care Homecare, Inc.</div>
+        <div class="brand-sub">Sales Operations Reference</div>
+      </div>
+    </div>
+    <div class="badge">Quick Ref &middot; Sales Rep Expectations</div>
+  </div>
+
+  <!-- INTRO BANNER -->
+  <div class="intro">
+    <div class="intro-inner">
+      <div class="intro-stat">
+        <div class="intro-num">EOD</div>
+        <div class="intro-unit">Friday</div>
+        <div class="intro-desc">All visits logged in HubSpot</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-num">2</div>
+        <div class="intro-unit">Business Days</div>
+        <div class="intro-desc">Lead referrals logged in HubSpot</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-num">1&times;</div>
+        <div class="intro-unit">Per Month Min</div>
+        <div class="intro-desc">High value accounts visited in person</div>
+      </div>
+      <div class="intro-stat">
+        <div class="intro-num">Weekly</div>
+        <div class="intro-unit">Review</div>
+        <div class="intro-desc">HubSpot reviewed with manager</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 1: HubSpot (3 col) -->
+  <div class="grid-3">
+
+    <!-- HubSpot: Visit Logging -->
+    <div class="card blue-card">
+      <div class="sys-label sys-hubspot">&#11044; HubSpot</div>
+      <div class="st st-blue"><span class="dot dot-blue"></span>Visit Logging</div>
+      <div class="rule red-rule"><strong>If it wasn't logged in HubSpot, it didn't happen.</strong> Every visit must be recorded — no exceptions.</div>
+      <div class="section-label">Each Visit Log Must Include</div>
+      <div class="bul req-bul"><strong>Note</strong> — what was discussed</div>
+      <div class="bul req-bul"><strong>Contact</strong> — who was visited</div>
+      <div class="bul req-bul"><strong>Follow up</strong> — next step logged</div>
+      <hr class="sdiv">
+      <div class="section-label">Deadline</div>
+      <div class="kv"><span class="kl">Visits logged by</span><span class="kv-val flag">EOD Friday</span></div>
+      <div class="kv"><span class="kl">HubSpot reviewed</span><span class="kv-val">Weekly with manager</span></div>
+    </div>
+
+    <!-- HubSpot: Lead Referrals -->
+    <div class="card purple-card">
+      <div class="sys-label sys-hubspot">&#11044; HubSpot</div>
+      <div class="st st-purple"><span class="dot dot-purple"></span>Lead Referral Logging</div>
+      <div class="kv"><span class="kl">Log within</span><span class="kv-val flag">2 business days of receipt</span></div>
+      <hr class="sdiv">
+      <div class="section-label">Each Lead Log Must Include</div>
+      <div class="bul req-bul"><strong>Basic information</strong> — contact details, source</div>
+      <div class="bul req-bul"><strong>Outcome</strong> — result of outreach</div>
+      <div class="bul req-bul"><strong>Follow up</strong> — next steps noted</div>
+      <hr class="sdiv">
+      <div class="rule blue-rule">Log the lead as soon as it is received — do not wait until the outcome is known to create the record.</div>
+    </div>
+
+    <!-- HubSpot: Weekly Manager Review -->
+    <div class="card green-card">
+      <div class="sys-label sys-hubspot">&#11044; HubSpot</div>
+      <div class="st st-green"><span class="dot dot-green"></span>Weekly Manager Review</div>
+      <div class="rule green-rule">HubSpot activity is reviewed <strong>weekly with your manager.</strong> All visits and lead logs must be current before that meeting.</div>
+      <div class="section-label">Pre-1-on-1 Checklist</div>
+      <div class="bul req-bul">All visits logged with note, contact, and follow-up</div>
+      <div class="bul req-bul">All lead referrals logged within 2 business days</div>
+      <div class="bul req-bul">Everything entered by <strong>EOD Friday</strong></div>
+      <div class="bul req-bul">Visit Planner submitted to manager before 1-on-1</div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Visit Planner + WellSky -->
+  <div class="grid-2">
+
+    <!-- Visit Planner -->
+    <div class="card amber-card">
+      <div class="st st-amber"><span class="dot dot-amber"></span>Visit Planner</div>
+      <div class="rule amber-rule"><strong>Visit Planner tracking must be completed and submitted to your manager before your 1-on-1.</strong> Any changes to the plan must be noted.</div>
+
+      <div class="section-label">Account Visit Tiers</div>
+
+      <div class="tier tier-high">
+        <div class="tier-label tl-red">&#9679; High Value Accounts</div>
+        <div class="tier-text"><strong>Minimum once per month</strong> — in-person visit required. These are your priority accounts and must be maintained consistently.</div>
+      </div>
+
+      <div class="tier tier-reg">
+        <div class="tier-label tl-amber">&#9679; All Other Accounts</div>
+        <div class="tier-text">Must be <strong>regularly visited in person.</strong> Consistent coverage shows active management and protects your territory.</div>
+      </div>
+
+      <div class="tier tier-risk">
+        <div class="tier-label tl-slate">&#9650; At Risk</div>
+        <div class="tier-text">Accounts that are <strong>not regularly visited</strong> are at risk of <strong>reassignment.</strong> Do not let accounts go cold.</div>
+      </div>
+
+      <hr class="sdiv">
+      <div class="section-label">Visit Planner Rules</div>
+      <div class="kv"><span class="kl">Submit planner</span><span class="kv-val flag">Before every 1-on-1</span></div>
+      <div class="kv"><span class="kl">Changes to plan</span><span class="kv-val">Must be noted in planner</span></div>
+      <div class="kv"><span class="kl">High value — min. frequency</span><span class="kv-val warn">Monthly in-person</span></div>
+      <div class="kv"><span class="kl">Accounts not visited</span><span class="kv-val flag">At risk of reassignment</span></div>
+    </div>
+
+    <!-- WellSky -->
+    <div class="card teal-card">
+      <div class="sys-label sys-wellsky">&#11044; WellSky</div>
+      <div class="st st-teal"><span class="dot dot-teal"></span>WellSky Expectations</div>
+
+      <div class="section-label">After a Case Starts</div>
+      <div class="rule teal-rule">Once a case starts, verify that you are <strong>correctly assigned as the marketer</strong> on the case in WellSky. Do not assume it was set automatically.</div>
+      <div class="kv"><span class="kl">Marketer assignment</span><span class="kv-val flag">Verify after every case start</span></div>
+
+      <hr class="sdiv">
+
+      <div class="section-label">Referral Source Missing Report</div>
+      <div class="rule amber-rule"><strong>Every Friday</strong> you will receive a Referral Source Missing report. If your name appears on the report, your referral sources must be updated in WellSky.</div>
+      <div class="rule red-rule"><strong>All missing referral sources from the current month must be resolved by end of month — no exceptions.</strong></div>
+
+      <div class="section-label" style="margin-top:8px;">How to Resolve</div>
+      <div class="bul"><strong>Option A:</strong> Update the referral sources yourself directly in WellSky</div>
+      <div class="bul"><strong>Option B:</strong> Send the relevant information to the <strong>Sales Administrator</strong> to update on your behalf</div>
+
+      <hr class="sdiv">
+      <div class="kv"><span class="kl">Report frequency</span><span class="kv-val">Every Friday</span></div>
+      <div class="kv"><span class="kl">If you appear on report</span><span class="kv-val flag">Update referral sources</span></div>
+      <div class="kv"><span class="kl">Current month deadline</span><span class="kv-val flag">End of month — no exceptions</span></div>
+      <div class="kv"><span class="kl">Who can update</span><span class="kv-val">You or Sales Administrator</span></div>
+    </div>
+
+  </div>
+
+  <!-- ROW 3: Full-Width Weekly Checklist -->
+  <div style="margin-bottom:10px;">
+    <div class="card slate-card">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Weekly Rep Checklist — Before End of Week</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+
+        <div>
+          <div class="section-label" style="color:var(--blue);">&#11044; HubSpot</div>
+          <ul class="checklist">
+            <li><div class="cb"></div><span>All visits logged with <strong>note, contact, follow-up</strong></span></li>
+            <li><div class="cb"></div><span>Lead referrals from this week logged within <strong>2 business days</strong></span></li>
+            <li><div class="cb"></div><span>All entries complete by <strong>EOD Friday</strong></span></li>
+            <li><div class="cb"></div><span>HubSpot ready for <strong>weekly manager review</strong></span></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="section-label" style="color:var(--amber);">&#9650; Visit Planner</div>
+          <ul class="checklist">
+            <li><div class="cb"></div><span>Visit Planner <strong>completed and submitted</strong> before 1-on-1</span></li>
+            <li><div class="cb"></div><span>Any changes to plan <strong>noted</strong></span></li>
+            <li><div class="cb"></div><span>High value accounts on track for <strong>monthly in-person</strong></span></li>
+            <li><div class="cb"></div><span>No accounts going cold / at risk of reassignment</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="section-label" style="color:var(--teal);">&#11044; WellSky</div>
+          <ul class="checklist">
+            <li><div class="cb"></div><span>New case starts — confirmed as <strong>assigned marketer</strong></span></li>
+            <li><div class="cb"></div><span>Referral Source Missing report checked (sent every <strong>Friday</strong>)</span></li>
+            <li><div class="cb"></div><span>If on report — referral sources <strong>updated in WellSky</strong> or sent to Sales Admin</span></li>
+            <li><div class="cb"></div><span>All current-month missing sources resolved by <strong>end of month — no exceptions</strong></span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>For internal sales use only &middot; Sales Rep Expectations</span>
+  </div>
+
+</div>
+</body>
+</html>
