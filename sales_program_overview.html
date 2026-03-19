@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>Sales Program Overview · Elder Care</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #185FA5; --blue-light: #eaf2fb; --blue-border: #b5d4f4;
+      --green: #0a6648; --green-light: #eaf6f0; --green-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --purple: #3c3489; --purple-light: #f0eeff; --purple-border: #c8c0f0;
+      --teal: #0e5f6e; --teal-light: #e4f4f7; --teal-border: #8fd4df;
+      --bg: #f0ede8; --card: #fff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8; --divider: #ede9e2;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 12px; line-height: 1.5; }
+    .page { max-width: 980px; margin: 0 auto; padding: 0 14px 20px; }
+
+    /* NAV BAR */
+    .nav-bar { background: #fff; border: 1px solid #dedad2; border-radius: 8px; padding: 8px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .nav-back { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; font-size: 10px; font-weight: 700; color: #185FA5; background: #eaf2fb; border: 1px solid #b5d4f4; border-radius: 4px; padding: 3px 9px; white-space: nowrap; }
+    .nav-back:hover { background: #d4e9f7; }
+    .nav-sep { color: #dedad2; font-size: 13px; margin: 0 1px; }
+    .nav-link { display: inline-flex; align-items: center; text-decoration: none; font-size: 10px; font-weight: 600; color: #555; background: #f7f4ef; border: 1px solid #e5e0d8; border-radius: 4px; padding: 3px 9px; white-space: nowrap; }
+    .nav-link:hover { background: #eee9e0; color: #111; }
+    .nav-link.active { background: #eaf2fb; color: #185FA5; border-color: #b5d4f4; font-weight: 700; cursor: default; pointer-events: none; }
+    @media (max-width: 520px) { .nav-bar { gap: 5px; } .nav-link, .nav-back { font-size: 9.5px; padding: 3px 7px; } .nav-sep { display: none; } }
+
+    /* HEADER */
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 15px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .badge { background: var(--blue-light); color: var(--blue); font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--blue-border); white-space: nowrap; }
+
+    /* VIEW TOGGLE */
+    .toggle-bar { display: flex; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; margin-bottom: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .toggle-label { font-size: 11px; color: var(--muted); font-weight: 600; }
+    .toggle-btns { display: flex; gap: 6px; }
+    .toggle-btn { padding: 6px 16px; border-radius: 6px; border: 1px solid var(--border); font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.15s; background: var(--subtle); color: var(--slate); }
+    .toggle-btn:hover { background: #e8e4dc; }
+    .toggle-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+    /* VIEWS */
+    .view { display: none; }
+    .view.active { display: block; }
+
+    /* CARDS + GRID */
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-1 { margin-bottom: 10px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px; }
+    .card.blue-card   { border-top: 3px solid var(--blue); }
+    .card.green-card  { border-top: 3px solid var(--green); }
+    .card.red-card    { border-top: 3px solid var(--red); }
+    .card.amber-card  { border-top: 3px solid var(--amber); }
+    .card.slate-card  { border-top: 3px solid var(--slate); }
+    .card.purple-card { border-top: 3px solid var(--purple); }
+    .card.teal-card   { border-top: 3px solid var(--teal); }
+
+    /* SECTION TITLES */
+    .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; display: flex; align-items: center; gap: 6px; }
+    .st-blue   { color: var(--blue);   border-color: var(--blue-border); }
+    .st-green  { color: var(--green);  border-color: var(--green-border); }
+    .st-red    { color: var(--red);    border-color: var(--red-border); }
+    .st-amber  { color: var(--amber);  border-color: var(--amber-border); }
+    .st-slate  { color: var(--slate);  border-color: var(--slate-border); }
+    .st-purple { color: var(--purple); border-color: var(--purple-border); }
+    .st-teal   { color: var(--teal);   border-color: var(--teal-border); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue { background: var(--blue); } .dot-green { background: var(--green); }
+    .dot-red { background: var(--red); } .dot-amber { background: var(--amber); }
+    .dot-slate { background: var(--slate); } .dot-purple { background: var(--purple); }
+    .dot-teal { background: var(--teal); }
+
+    /* KV */
+    .kv { display: flex; justify-content: space-between; align-items: flex-start; padding: 3.5px 0; font-size: 11px; border-bottom: 1px solid #f2efe9; gap: 8px; }
+    .kv:last-child { border-bottom: none; }
+    .kl { color: var(--muted); flex: 1; }
+    .kv-val { font-weight: 600; color: #111; text-align: right; }
+    .kv-val.flag { color: var(--red); }
+
+    /* BULLETS */
+    .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 3px 0 3px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
+    .bul:last-child { border-bottom: none; }
+    .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
+    .bul strong { font-weight: 700; color: #111; }
+    .bul a { color: var(--blue); text-decoration: none; font-weight: 700; }
+    .bul a:hover { text-decoration: underline; }
+
+    /* RULE */
+    .rule { background: var(--subtle); border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid var(--subtle-border); }
+    .rule:last-child { margin-bottom: 0; }
+    .rule strong { font-weight: 700; color: #111; }
+    .rule.red-rule { background: var(--red-light); border-color: var(--red-border); }
+    .rule.green-rule { background: var(--green-light); border-color: var(--green-border); }
+    .rule.amber-rule { background: var(--amber-light); border-color: var(--amber-border); }
+
+    /* DIVIDER */
+    .sdiv { border: none; border-top: 1px solid var(--divider); margin: 9px 0; }
+    .section-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 6px; margin-top: 2px; }
+
+    /* CHEATSHEET LINK BADGE */
+    .cs-link { display: inline-flex; align-items: center; gap: 4px; background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-border); border-radius: 4px; padding: 2px 8px; font-size: 9.5px; font-weight: 700; text-decoration: none; margin-top: 4px; }
+    .cs-link:hover { background: #d4e9f7; }
+
+    /* ─── TEXT VIEW: Day rows ─── */
+    .day-block { background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
+    .day-header { display: flex; align-items: center; gap: 10px; padding: 9px 13px; cursor: pointer; user-select: none; }
+    .day-header:hover { background: #faf8f5; }
+    .day-badge { font-size: 10px; font-weight: 700; color: #fff; border-radius: 5px; padding: 3px 10px; flex-shrink: 0; white-space: nowrap; }
+    .db-pre  { background: var(--slate); }
+    .db-d3   { background: var(--blue); }
+    .db-d4   { background: #2e6a9a; }
+    .db-d5   { background: var(--teal); }
+    .db-d6   { background: var(--green); }
+    .db-shad { background: var(--purple); }
+    .db-close { background: var(--amber); }
+    .day-title { font-size: 12px; font-weight: 700; color: #111; flex: 1; }
+    .day-subtitle { font-size: 10px; color: var(--muted); }
+    .day-arrow { font-size: 12px; color: #aaa; transition: transform 0.2s; }
+    .day-body { padding: 0 13px 10px; display: none; }
+    .day-block.open .day-body { display: block; }
+    .day-block.open .day-arrow { transform: rotate(90deg); }
+
+    .session-row { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid #f2efe9; align-items: flex-start; }
+    .session-row:last-child { border-bottom: none; }
+    .session-time { font-size: 10px; font-weight: 600; color: var(--muted); min-width: 70px; flex-shrink: 0; padding-top: 1px; }
+    .session-content { flex: 1; }
+    .session-title { font-size: 11px; font-weight: 700; color: #111; line-height: 1.3; }
+    .session-who { font-size: 10px; color: var(--muted); margin-top: 1px; }
+    .session-note { font-size: 10px; color: #555; margin-top: 2px; line-height: 1.5; }
+    .session-note a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    .session-note a:hover { text-decoration: underline; }
+
+    /* ─── VISUAL VIEW: Flow diagram ─── */
+    .phase-flow { display: flex; flex-direction: column; gap: 0; }
+
+    .phase-row { display: flex; gap: 12px; align-items: stretch; }
+    .phase-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 80px; }
+    .phase-pill { width: 80px; border-radius: 8px; padding: 8px 6px; text-align: center; color: #fff; line-height: 1.15; }
+    .phase-pill .pp-label { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; opacity: 0.85; display: block; margin-bottom: 2px; }
+    .phase-pill .pp-name  { font-size: 13px; font-weight: 700; display: block; }
+    .phase-pill .pp-sub   { font-size: 9px; opacity: 0.8; display: block; margin-top: 1px; }
+    .pp-pre   { background: var(--slate); }
+    .pp-d3    { background: var(--blue); }
+    .pp-d4    { background: #2e6a9a; }
+    .pp-d5    { background: var(--teal); }
+    .pp-d6    { background: var(--green); }
+    .pp-shad  { background: var(--purple); }
+    .pp-close { background: var(--amber); }
+    .phase-connector { display: flex; flex-direction: column; align-items: center; width: 80px; flex-shrink: 0; padding: 3px 0; }
+    .phase-line { width: 2px; flex: 1; background: #ccc8c0; min-height: 8px; }
+    .phase-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #b0aba2; margin-bottom: 2px; }
+    .phase-content { flex: 1; padding: 2px 0 14px 0; }
+    .phase-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+    .ptag { display: inline-flex; align-items: center; gap: 4px; border-radius: 5px; padding: 4px 9px; font-size: 10.5px; font-weight: 600; border: 1px solid; cursor: default; }
+    .ptag a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 4px; }
+    .ptag a:hover { text-decoration: underline; }
+    .ptag-blue   { background: var(--blue-light);   color: var(--blue);   border-color: var(--blue-border); }
+    .ptag-green  { background: var(--green-light);  color: var(--green);  border-color: var(--green-border); }
+    .ptag-amber  { background: var(--amber-light);  color: var(--amber);  border-color: var(--amber-border); }
+    .ptag-red    { background: var(--red-light);     color: var(--red);    border-color: var(--red-border); }
+    .ptag-purple { background: var(--purple-light); color: var(--purple); border-color: var(--purple-border); }
+    .ptag-teal   { background: var(--teal-light);   color: var(--teal);   border-color: var(--teal-border); }
+    .ptag-slate  { background: var(--slate-light);  color: var(--slate);  border-color: var(--slate-border); }
+    .phase-note { font-size: 10.5px; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+    .phase-note strong { color: #111; font-weight: 700; }
+
+    /* FOOTER */
+    .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; flex-wrap: wrap; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .bul, .rule, .kv, .session-title, .session-note { font-size: 12px; }
+    }
+    @media (max-width: 520px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .phase-left { width: 64px; }
+      .phase-pill { width: 64px; }
+      .phase-connector { width: 64px; }
+      .phase-pill .pp-name { font-size: 11px; }
+      .footer { flex-direction: column; text-align: center; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div style="max-width:980px;margin:0 auto;padding:14px 14px 0;">
+  <div class="nav-bar">
+    <a class="nav-back" href="index.html">&#8592; Hub</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="eldercare_cheatsheet_v4.html">&#128203; Service Agreement</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="rn_vs_lpn_cheatsheet.html">&#129658; RN vs LPN</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="lead_distribution_cheatsheet.html">&#9889; Lead Distribution</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="sales_rep_expectations.html">&#128202; Rep Expectations</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="acronyms_cheatsheet.html">&#128218; Acronyms</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-link active">&#128640; Program Overview</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
+      <div>
+        <div class="brand-text">Elder Care Homecare, Inc.</div>
+        <div class="brand-sub">New Hire Sales Onboarding</div>
+      </div>
+    </div>
+    <div class="badge">Sales Program Overview · Days 3–6 &amp; Beyond</div>
+  </div>
+
+  <!-- TOGGLE BAR -->
+  <div class="toggle-bar">
+    <span class="toggle-label">Choose your view:</span>
+    <div class="toggle-btns">
+      <button class="toggle-btn active" onclick="setView('text')">&#128214; Text View — Read &amp; Understand</button>
+      <button class="toggle-btn" onclick="setView('visual')">&#128065; Visual View — See the Flow</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       TEXT VIEW
+  ═══════════════════════════════════════════════════ -->
+  <div id="view-text" class="view active">
+
+    <!-- Big picture summary -->
+    <div class="grid-3">
+      <div class="card blue-card">
+        <div class="st st-blue"><span class="dot dot-blue"></span>The Program at a Glance</div>
+        <div class="kv"><span class="kl">Structured training</span><span class="kv-val">Days 3–6 (Week 1)</span></div>
+        <div class="kv"><span class="kl">Shadow phase</span><span class="kv-val">Weeks 2–3+ (9 visits)</span></div>
+        <div class="kv"><span class="kl">Daily check-in</span><span class="kv-val">~9:30 AM with manager</span></div>
+        <div class="kv"><span class="kl">Daily wrap-up</span><span class="kv-val">4:30 PM with Dir. Sales Ops</span></div>
+        <div class="kv"><span class="kl">Recurring series</span><span class="kv-val">"What Sets Us Apart?" 2×/week × 3 wks</span></div>
+        <div class="kv"><span class="kl">Close-out requires</span><span class="kv-val flag">All 4 criteria met</span></div>
+      </div>
+      <div class="card green-card">
+        <div class="st st-green"><span class="dot dot-green"></span>To Graduate the Program You Must</div>
+        <div class="bul">Pass the <strong>SA comprehension quiz</strong></div>
+        <div class="bul">Complete <strong>all Loom self-directed videos</strong> (HubSpot 19 min, DocuSign 13 min, WellSky 7 min, Slack 3 min)</div>
+        <div class="bul">Complete <strong>9 shadow visits</strong> — Google Form + rep debrief required for each</div>
+        <div class="bul">Have a documented <strong>30-day target conversation</strong></div>
+        <div class="bul">Submit the <strong>end-of-program survey</strong></div>
+      </div>
+      <div class="card red-card">
+        <div class="st st-red"><span class="dot dot-red"></span>Non-Negotiables</div>
+        <div class="rule red-rule"><strong>SA quiz not passed by end of Day 6?</strong> Redo before Day 7. No exceptions.</div>
+        <div class="rule red-rule"><strong>Shadow visit doesn't count</strong> unless: Google Form submitted by 6 PM AND rep debrief received.</div>
+        <div class="rule red-rule"><strong>Split days don't count</strong> as shadow days. The full day must be dedicated.</div>
+        <div class="rule red-rule"><strong>30-day target conversation must be documented</strong> in writing — verbal only does not count.</div>
+      </div>
+    </div>
+
+    <!-- Day-by-day accordion -->
+    <!-- PRE-DAY 3 -->
+    <div class="day-block open">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-pre">Before Day 3</span>
+        <span class="day-title">Setup &amp; System Access</span>
+        <span class="day-subtitle">Owned by Sales Admin &amp; Dir. Sales Ops</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">Immediately</span>
+          <div class="session-content">
+            <div class="session-title">Slack channel created, intake forms sent, account list prepared</div>
+            <div class="session-note">Sales Admin creates onboarding channel and master tracker row. Dir. Sales Ops prepares A/B/C tiered account list.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Before Day 3</span>
+          <div class="session-content">
+            <div class="session-title">All systems confirmed: HubSpot, DocuSign, WellSky, Ramp card, Veta Virtual, email signature, company phone</div>
+            <div class="session-note">Apps pre-installed. Contacts pre-filled. Google Drive and org chart access granted. All Day 3–6 calendar invites sent.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Rolling</span>
+          <div class="session-content">
+            <div class="session-title">SA cheat sheet prepared, shadow schedule drafted, pre-shadow emails sent ≥48 hrs before each visit</div>
+            <div class="session-note">Required for every visit — not optional.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block open">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-d3">Day 3</span>
+        <span class="day-title">Orientation, Service Agreement &amp; Systems</span>
+        <span class="day-subtitle">The most content-heavy day</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">9:30 AM</span>
+          <div class="session-content">
+            <div class="session-title">Morning check-in — Hiring Manager</div>
+            <div class="session-note">Set expectations, confirm all systems are working.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">10:30 AM</span>
+          <div class="session-content">
+            <div class="session-title">Sales Program Overview (~30 min) — Dir. Sales Ops</div>
+            <div class="session-note">What Days 3–6 look like, shadow phase structure, daily Wrap-Up cadence. <span class="cs-link" style="pointer-events:none;opacity:0.6">This page</span></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~11 AM</span>
+          <div class="session-content">
+            <div class="session-title">Slack culture &amp; etiquette (~45 min)</div>
+            <div class="session-note">After-hours rules, channel norms, client Slack channels, discriminatory request protocol.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~11:45 AM</span>
+          <div class="session-content">
+            <div class="session-title">Levels of care + NY state regulations (~30 min)</div>
+            <div class="session-note">RN vs. LPN. High-acuity cases. Market-specific written list. <a class="cs-link" href="rn_vs_lpn_cheatsheet.html">&#129658; RN vs LPN Cheat Sheet</a></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~12:15 PM</span>
+          <div class="session-content">
+            <div class="session-title">Google Drive orientation (~20 min) — Dir. Sales Ops</div>
+            <div class="session-note">Rate sheets, service levels, marketing materials, who to send requests to.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~12:30 PM</span>
+          <div class="session-content">
+            <div class="session-title">WellSky self-directed block — Loom (7:31 min) + market portal (~90 min)</div>
+            <div class="session-note">Self-directed. Note questions for Wrap-Up.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~2 PM</span>
+          <div class="session-content">
+            <div class="session-title">Ramp card training + Finance overview (~45 min) — Nick Coppola</div>
+            <div class="session-note">Expense card setup and finance overview.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~2:45 PM</span>
+          <div class="session-content">
+            <div class="session-title">DPS Team Overview Session 1 (~45 min) — Carmella Miller</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~3 PM</span>
+          <div class="session-content">
+            <div class="session-title">SA self-read — 60 minutes (independent)</div>
+            <div class="session-note">New hire reads full Service Agreement independently. <strong>Must complete before the guided walkthrough.</strong></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">3:30 PM</span>
+          <div class="session-content">
+            <div class="session-title">SA guided walkthrough (~75 min min) — Dir. Sales Ops + Hiring Manager</div>
+            <div class="session-note">Deposits, add-on fees, cancellation, billing, CC fees, driving waiver. Both attend every market, every hire. <a class="cs-link" href="eldercare_cheatsheet_v4.html">&#128203; Service Agreement Cheat Sheet</a></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">4:30 PM</span>
+          <div class="session-content">
+            <div class="session-title">Wrap-Up — SA comprehension quiz administered</div>
+            <div class="session-note">Debrief Day 3, answer SA questions, confirm Ramp card active, confirm WellSky portal live, preview Day 4.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-block">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-d4">Day 4</span>
+        <span class="day-title">HubSpot, DocuSign &amp; Company Vision</span>
+        <span class="day-subtitle">Systems deep-dive + leadership welcome</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">Morning</span>
+          <div class="session-content">
+            <div class="session-title">Loom videos block: HubSpot (19 min) + DocuSign (13 min) + Slack (3 min)</div>
+            <div class="session-note">Self-directed. Protect this time — no competing meetings. Note questions for 4:30 PM Wrap-Up.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">After Looms</span>
+          <div class="session-content">
+            <div class="session-title">HubSpot + DocuSign walkthrough (~45 min) — Sales Admin</div>
+            <div class="session-note">Navigation and common tasks. Loom first, then this session — in that order. Marketing collateral request process also covered. <a class="cs-link" href="lead_distribution_cheatsheet.html">&#9889; Lead Distribution Cheat Sheet</a></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Flex ~30 min</span>
+          <div class="session-content">
+            <div class="session-title">CBO Welcome — Eric Mayer</div>
+            <div class="session-note">Company vision, growth strategy, your role at this stage.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">4:30 PM</span>
+          <div class="session-content">
+            <div class="session-title">Wrap-Up</div>
+            <div class="session-note">Answer all Loom questions. Confirm HubSpot live session on Day 5. Confirm shadow schedule shared. Reminder: update LinkedIn this week.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-block">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-d5">Day 5</span>
+        <span class="day-title">HubSpot Live, DocuSign Hands-On &amp; Sales Process</span>
+        <span class="day-subtitle">The skills-practice day</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">9:30 AM</span>
+          <div class="session-content">
+            <div class="session-title">HubSpot live session (~60 min) — Dir. Sales Ops</div>
+            <div class="session-note">Accounts, data hygiene, referral source tagging, pipeline, mobile app setup. Must create 5 referral source records correctly. <a class="cs-link" href="sales_rep_expectations.html">&#128202; Rep Expectations Cheat Sheet</a></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">After HubSpot</span>
+          <div class="session-content">
+            <div class="session-title">DocuSign 2-hour hands-on training — Dir. Sales Ops</div>
+            <div class="session-note">Templates, new documents, signing on phone. Dedicated 2-hour block — do not compress.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~11 AM</span>
+          <div class="session-content">
+            <div class="session-title">WellSky reporting access + Weekly Revenue report setup (~30 min)</div>
+            <div class="session-note">Trained on source-fill requirements and weekly sources report obligation.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Afternoon</span>
+          <div class="session-content">
+            <div class="session-title">Sales process case studies — local market + non-local market</div>
+            <div class="session-note">Full walkthrough: inquiry → contract signed → intake form sent. Use a real case if available.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Flex ~30 min</span>
+          <div class="session-content">
+            <div class="session-title">CEO Welcome — David Gilberg</div>
+            <div class="session-note">Reschedule within 3 weeks if unavailable. Document in tracker.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Flex ~45 min</span>
+          <div class="session-content">
+            <div class="session-title">Nursing Services Overview Session 2 — Carmella Miller</div>
+            <div class="session-note">Clinical oversight, initial assessment, care plan, fall risk, medication, supervisory visits.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">4:30 PM</span>
+          <div class="session-content">
+            <div class="session-title">End-of-Week-1 check-in — Dir. Sales Ops + Hiring Manager</div>
+            <div class="session-note">SA quiz passed? All Looms done? Account list reviewed? Ready for field?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day-block">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-d6">Day 6</span>
+        <span class="day-title">Lead System, Accounts &amp; Field Clearance</span>
+        <span class="day-subtitle">Handoff to field — you take ownership of your territory</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">Morning</span>
+          <div class="session-content">
+            <div class="session-title">Lead system overview + performance expectations (~45 min) — Hiring Manager</div>
+            <div class="session-note">Lead distribution, visit minimums, HubSpot logging, WellSky source-fill, weekly sources report. <a class="cs-link" href="lead_distribution_cheatsheet.html">&#9889; Lead Distribution Cheat Sheet</a></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Morning</span>
+          <div class="session-content">
+            <div class="session-title">Key accounts review (~60 min) — Hiring Manager</div>
+            <div class="session-note">Walk through A/B/C tiered account list. Current status. Warm accounts to prioritize in Week 2. <strong>You take ownership of the list at the end of this session.</strong></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">~15 min</span>
+          <div class="session-content">
+            <div class="session-title">Nonpayment and collections policy — Hiring Manager</div>
+            <div class="session-note">When and how to involve management.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Afternoon</span>
+          <div class="session-content">
+            <div class="session-title">Marketing materials confirmed — leave-behinds ready for field</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">4:30 PM</span>
+          <div class="session-content">
+            <div class="session-title">Week 1 close Wrap-Up — Dir. Sales Ops</div>
+            <div class="session-note">Confirm: SA quiz passed, all Looms done, account list owned, shadow schedule confirmed, cleared for shadow phase.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHADOW PHASE -->
+    <div class="day-block">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-shad">Weeks 2–3+</span>
+        <span class="day-title">Shadow Phase — 9 Required Visits</span>
+        <span class="day-subtitle">Each visit must be a full dedicated day</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">≥48 hrs before</span>
+          <div class="session-content">
+            <div class="session-title">Pre-shadow email to rep/ops director — Dir. Sales Ops</div>
+            <div class="session-note">Purpose of visit, key topics, expectations, referral-asking component. Required — not optional.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Night before</span>
+          <div class="session-content">
+            <div class="session-title">Reminder to new hire — Sales Admin</div>
+            <div class="session-note">Rep name, phone, full address with suite, parking/access notes.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">By 6 PM</span>
+          <div class="session-content">
+            <div class="session-title">New hire submits Google Form debrief</div>
+            <div class="session-note">3 prompts: (1) What I observed (2) One unanswered question (3) One thing I'll do differently. <strong>Visit does not count until submitted.</strong></div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">By 6 PM</span>
+          <div class="session-content">
+            <div class="session-title">Shadow rep sends 3-sentence debrief to Dir. Sales Ops</div>
+            <div class="session-note">(1) What we covered (2) One thing done well (3) One area to develop. All three items required for the visit to count.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLOSE-OUT -->
+    <div class="day-block">
+      <div class="day-header" onclick="toggleDay(this)">
+        <span class="day-badge db-close">Close-Out</span>
+        <span class="day-title">Program Graduation — All 4 Criteria Required</span>
+        <span class="day-subtitle">Do not close until every item is confirmed</span>
+        <span class="day-arrow">›</span>
+      </div>
+      <div class="day-body">
+        <div class="session-row">
+          <span class="session-time">Criteria 1</span>
+          <div class="session-content"><div class="session-title">Every item in the Training Tracker marked complete</div></div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Criteria 2</span>
+          <div class="session-content"><div class="session-title">All 9 shadow visits confirmed — Google Form + rep debrief for each</div></div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Criteria 3</span>
+          <div class="session-content">
+            <div class="session-title">30-day target conversation held and documented in writing</div>
+            <div class="session-note">Email, CRM note, or shared doc — verbal only does not count.</div>
+          </div>
+        </div>
+        <div class="session-row">
+          <span class="session-time">Criteria 4</span>
+          <div class="session-content"><div class="session-title">End-of-program survey submitted by new hire and reviewed by Trish + Sales Manager</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /view-text -->
+
+
+  <!-- ═══════════════════════════════════════════════════
+       VISUAL VIEW
+  ═══════════════════════════════════════════════════ -->
+  <div id="view-visual" class="view">
+
+    <!-- Stats bar -->
+    <div class="grid-3" style="margin-bottom:10px;">
+      <div class="card blue-card" style="text-align:center;padding:14px;">
+        <div style="font-size:28px;font-weight:700;color:var(--blue);line-height:1;">4 Days</div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-top:4px;">Structured Training</div>
+        <div style="font-size:10px;color:#555;margin-top:3px;">Days 3 – 6, Week 1</div>
+      </div>
+      <div class="card purple-card" style="text-align:center;padding:14px;">
+        <div style="font-size:28px;font-weight:700;color:var(--purple);line-height:1;">9 Visits</div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-top:4px;">Shadow Phase</div>
+        <div style="font-size:10px;color:#555;margin-top:3px;">Weeks 2 – 3+</div>
+      </div>
+      <div class="card amber-card" style="text-align:center;padding:14px;">
+        <div style="font-size:28px;font-weight:700;color:var(--amber);line-height:1;">4 Gates</div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-top:4px;">To Graduate</div>
+        <div style="font-size:10px;color:#555;margin-top:3px;">All required, no skipping</div>
+      </div>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="card slate-card" style="margin-bottom:10px;">
+      <div class="st st-slate"><span class="dot dot-slate"></span>Onboarding Journey — From Offer to Field</div>
+
+      <div class="phase-flow">
+
+        <!-- Pre Day 3 -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-pre"><span class="pp-label">Setup</span><span class="pp-name">Before</span><span class="pp-sub">Day 3</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <span class="ptag ptag-slate">&#128241; Systems + Accounts + Looms confirmed</span>
+              <span class="ptag ptag-slate">&#128197; All Day 3–6 invites sent</span>
+              <span class="ptag ptag-slate">&#9993; Shadow emails drafted</span>
+            </div>
+            <div class="phase-note"><strong>Owned by:</strong> Sales Admin + Dir. Sales Ops. Done before you arrive.</div>
+          </div>
+        </div>
+        <div class="phase-connector"><div class="phase-line"></div><div class="phase-arrow"></div></div>
+
+        <!-- Day 3 -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-d3"><span class="pp-label">Week 1</span><span class="pp-name">Day 3</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <span class="ptag ptag-blue">Program overview</span>
+              <span class="ptag ptag-blue">Slack etiquette</span>
+              <a class="ptag ptag-teal" href="rn_vs_lpn_cheatsheet.html">&#129658; Levels of Care</a>
+              <span class="ptag ptag-blue">WellSky Loom (7 min)</span>
+              <span class="ptag ptag-blue">Ramp card + Finance</span>
+              <span class="ptag ptag-blue">DPS Overview</span>
+              <a class="ptag ptag-red" href="eldercare_cheatsheet_v4.html">&#128203; SA Self-Read → Walkthrough → Quiz</a>
+            </div>
+            <div class="phase-note"><strong>Key milestone:</strong> SA comprehension quiz at 4:30 PM Wrap-Up.</div>
+          </div>
+        </div>
+        <div class="phase-connector"><div class="phase-line"></div><div class="phase-arrow"></div></div>
+
+        <!-- Day 4 -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-d4"><span class="pp-label">Week 1</span><span class="pp-name">Day 4</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <a class="ptag ptag-purple" href="lead_distribution_cheatsheet.html">&#9889; HubSpot + DocuSign Looms</a>
+              <span class="ptag ptag-purple">Systems walkthrough</span>
+              <span class="ptag ptag-purple">Marketing collateral process</span>
+              <span class="ptag ptag-slate">CBO Welcome — Eric Mayer</span>
+              <span class="ptag ptag-purple">"What Sets Us Apart?" Session 1</span>
+            </div>
+            <div class="phase-note"><strong>Order matters:</strong> Loom videos first, then live walkthrough — not the other way around.</div>
+          </div>
+        </div>
+        <div class="phase-connector"><div class="phase-line"></div><div class="phase-arrow"></div></div>
+
+        <!-- Day 5 -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-d5"><span class="pp-label">Week 1</span><span class="pp-name">Day 5</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <a class="ptag ptag-teal" href="sales_rep_expectations.html">&#128202; HubSpot live (5 records created)</a>
+              <span class="ptag ptag-teal">DocuSign 2-hr hands-on</span>
+              <span class="ptag ptag-teal">WellSky reporting + Revenue report</span>
+              <span class="ptag ptag-teal">Sales process case studies (x2)</span>
+              <span class="ptag ptag-slate">CEO Welcome — David Gilberg</span>
+              <span class="ptag ptag-teal">Nursing Services Overview Session 2</span>
+            </div>
+            <div class="phase-note"><strong>End-of-Week-1 check:</strong> SA quiz passed? All Looms done? Account list reviewed? Ready for field?</div>
+          </div>
+        </div>
+        <div class="phase-connector"><div class="phase-line"></div><div class="phase-arrow"></div></div>
+
+        <!-- Day 6 -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-d6"><span class="pp-label">Week 1</span><span class="pp-name">Day 6</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <a class="ptag ptag-green" href="lead_distribution_cheatsheet.html">&#9889; Lead system + performance expectations</a>
+              <span class="ptag ptag-green">A/B/C account list review — you take ownership</span>
+              <span class="ptag ptag-green">Collections policy</span>
+              <span class="ptag ptag-green">Marketing materials confirmed</span>
+            </div>
+            <div class="phase-note"><strong>4:30 PM gate:</strong> SA quiz ✔ · Looms ✔ · Account list owned ✔ · Shadow schedule confirmed ✔ → <strong>Cleared for field.</strong></div>
+          </div>
+        </div>
+        <div class="phase-connector"><div class="phase-line"></div><div class="phase-arrow"></div></div>
+
+        <!-- Shadow Phase -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-shad"><span class="pp-label">Weeks 2–3+</span><span class="pp-name">Shadow</span><span class="pp-sub">9 Visits</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <span class="ptag ptag-purple">Pre-shadow email ≥48 hrs before</span>
+              <span class="ptag ptag-purple">Full dedicated day only</span>
+              <span class="ptag ptag-purple">New hire Google Form by 6 PM</span>
+              <span class="ptag ptag-purple">Rep 3-sentence debrief by 6 PM</span>
+            </div>
+            <div class="phase-note"><strong>All 3 required for a visit to count:</strong> Email sent + Google Form submitted + Rep debrief received.</div>
+          </div>
+        </div>
+        <div class="phase-connector"><div class="phase-line"></div><div class="phase-arrow"></div></div>
+
+        <!-- Close-Out -->
+        <div class="phase-row">
+          <div class="phase-left"><div class="phase-pill pp-close"><span class="pp-label">Finish</span><span class="pp-name">Close</span><span class="pp-sub">Out</span></div></div>
+          <div class="phase-content">
+            <div class="phase-tags">
+              <span class="ptag ptag-amber">&#10003; Training Tracker complete</span>
+              <span class="ptag ptag-amber">&#10003; All 9 shadow visits confirmed</span>
+              <span class="ptag ptag-amber">&#10003; 30-day target documented in writing</span>
+              <span class="ptag ptag-amber">&#10003; End-of-program survey submitted</span>
+            </div>
+            <div class="phase-note"><strong>All 4 gates required.</strong> Not 3 of 4. All 4.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Recurring throughout -->
+    <div class="grid-2">
+      <div class="card blue-card">
+        <div class="st st-blue"><span class="dot dot-blue"></span>Daily Rhythm — Every Day (Days 3–6)</div>
+        <div class="kv"><span class="kl">~9:30 AM</span><span class="kv-val">Morning check-in — Hiring Manager calls you</span></div>
+        <div class="kv"><span class="kl">4:30 PM</span><span class="kv-val">Wrap-Up — Dir. Sales Ops</span></div>
+        <div class="kv"><span class="kl">2× per week × 3 wks</span><span class="kv-val">"What Sets Us Apart?" — Trish Corrigan</span></div>
+      </div>
+      <div class="card amber-card">
+        <div class="st st-amber"><span class="dot dot-amber"></span>Your 4 Graduation Gates</div>
+        <div class="bul"><strong>1.</strong> SA quiz passed</div>
+        <div class="bul"><strong>2.</strong> All 9 shadow visits confirmed with debrief docs</div>
+        <div class="bul"><strong>3.</strong> 30-day target conversation documented in writing</div>
+        <div class="bul"><strong>4.</strong> End-of-program survey submitted</div>
+      </div>
+    </div>
+
+  </div><!-- /view-visual -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>For internal use only &middot; Sales Program Overview</span>
+  </div>
+
+</div>
+
+<script>
+  function setView(v) {
+    document.getElementById('view-text').classList.remove('active');
+    document.getElementById('view-visual').classList.remove('active');
+    document.getElementById('view-' + v).classList.add('active');
+    document.querySelectorAll('.toggle-btn').forEach(function(b) { b.classList.remove('active'); });
+    event.target.classList.add('active');
+  }
+  function toggleDay(header) {
+    header.parentElement.classList.toggle('open');
+  }
+  // Open first two by default in text view
+  document.querySelectorAll('.day-block').forEach(function(b, i) {
+    if (i > 1) b.classList.remove('open');
+  });
+</script>
+</body>
+</html>
