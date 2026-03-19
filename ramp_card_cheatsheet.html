@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <link rel="icon" href="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png">
+  <title>Ramp Card Guidelines · Elder Care Sales</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #185FA5; --blue-light: #eaf2fb; --blue-border: #b5d4f4;
+      --green: #0a6648; --green-light: #eaf6f0; --green-border: #9fdfc8;
+      --red: #9a2a2a; --red-light: #fdf0f0; --red-border: #f5b8b8;
+      --amber: #7a4700; --amber-light: #fef3e0; --amber-border: #f5c97a;
+      --slate: #3a4a5a; --slate-light: #eef0f3; --slate-border: #b0bcc8;
+      --purple: #3c3489; --purple-light: #f0eeff; --purple-border: #c8c0f0;
+      --teal: #0e5f6e; --teal-light: #e4f4f7; --teal-border: #8fd4df;
+      --bg: #f0ede8; --card: #fff; --border: #dedad2;
+      --text: #1a1a1a; --muted: #666;
+      --subtle: #f7f4ef; --subtle-border: #e5e0d8; --divider: #ede9e2;
+    }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); font-size: 12px; line-height: 1.5; }
+    .page { max-width: 980px; margin: 0 auto; padding: 0 14px 20px; }
+
+    /* NAV BAR */
+    .nav-wrap { max-width: 980px; margin: 0 auto; padding: 14px 14px 0; }
+    .nav-bar { background: #fff; border: 1px solid #dedad2; border-radius: 8px; padding: 8px 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .nav-back { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; font-size: 10px; font-weight: 700; color: #185FA5; background: #eaf2fb; border: 1px solid #b5d4f4; border-radius: 4px; padding: 3px 9px; white-space: nowrap; }
+    .nav-back:hover { background: #d4e9f7; }
+    .nav-sep { color: #dedad2; font-size: 13px; margin: 0 1px; }
+    .nav-link { display: inline-flex; align-items: center; text-decoration: none; font-size: 10px; font-weight: 600; color: #555; background: #f7f4ef; border: 1px solid #e5e0d8; border-radius: 4px; padding: 3px 9px; white-space: nowrap; }
+    .nav-link:hover { background: #eee9e0; color: #111; }
+    .nav-link.active { background: #eaf2fb; color: #185FA5; border-color: #b5d4f4; font-weight: 700; cursor: default; pointer-events: none; }
+    @media (max-width: 520px) { .nav-bar { gap: 5px; } .nav-link, .nav-back { font-size: 9.5px; padding: 3px 7px; } .nav-sep { display: none; } }
+
+    /* HEADER */
+    .header { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .brand-text { font-size: 15px; font-weight: 700; color: #111; }
+    .brand-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+    .badge { background: var(--green-light); color: var(--green); font-size: 9.5px; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--green-border); white-space: nowrap; }
+
+    /* HERO BANNER */
+    .hero { background: linear-gradient(135deg, #0a6648 0%, #185FA5 100%); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; }
+    .hero-left {}
+    .hero-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,0.65); margin-bottom: 5px; }
+    .hero-title { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 4px; }
+    .hero-sub { font-size: 11px; color: rgba(255,255,255,0.8); }
+    .hero-limit { text-align: center; }
+    .hero-limit-num { font-size: 36px; font-weight: 700; color: #fff; line-height: 1; }
+    .hero-limit-label { font-size: 9.5px; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 3px; }
+    .hero-limit-sub { font-size: 9px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
+    /* GRIDS */
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+
+    /* CARDS */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 11px 13px; }
+    .card.green-card  { border-top: 3px solid var(--green); }
+    .card.red-card    { border-top: 3px solid var(--red); }
+    .card.amber-card  { border-top: 3px solid var(--amber); }
+    .card.blue-card   { border-top: 3px solid var(--blue); }
+    .card.slate-card  { border-top: 3px solid var(--slate); }
+
+    /* SECTION TITLES */
+    .st { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1.5px solid; display: flex; align-items: center; gap: 6px; }
+    .st-blue   { color: var(--blue);   border-color: var(--blue-border); }
+    .st-green  { color: var(--green);  border-color: var(--green-border); }
+    .st-red    { color: var(--red);    border-color: var(--red-border); }
+    .st-amber  { color: var(--amber);  border-color: var(--amber-border); }
+    .st-slate  { color: var(--slate);  border-color: var(--slate-border); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue { background: var(--blue); } .dot-green { background: var(--green); }
+    .dot-red { background: var(--red); } .dot-amber { background: var(--amber); }
+    .dot-slate { background: var(--slate); }
+
+    /* KV */
+    .kv { display: flex; justify-content: space-between; align-items: flex-start; padding: 3.5px 0; font-size: 11px; border-bottom: 1px solid #f2efe9; gap: 8px; }
+    .kv:last-child { border-bottom: none; }
+    .kl { color: var(--muted); flex: 1; }
+    .kv-val { font-weight: 600; color: #111; text-align: right; }
+    .kv-val.flag { color: var(--red); font-weight: 700; }
+    .kv-val.go { color: var(--green); font-weight: 700; }
+
+    /* RULE BLOCKS */
+    .rule { background: var(--subtle); border-radius: 5px; padding: 7px 10px; margin-bottom: 6px; font-size: 11px; color: #333; line-height: 1.65; border: 1px solid var(--subtle-border); }
+    .rule:last-child { margin-bottom: 0; }
+    .rule strong { font-weight: 700; color: #111; }
+    .rule.red-rule    { background: var(--red-light);   border-color: var(--red-border); }
+    .rule.green-rule  { background: var(--green-light); border-color: var(--green-border); }
+    .rule.amber-rule  { background: var(--amber-light); border-color: var(--amber-border); }
+    .rule.blue-rule   { background: var(--blue-light);  border-color: var(--blue-border); }
+
+    /* BULLETS */
+    .bul { font-size: 11px; line-height: 1.6; color: #333; display: block; padding: 3px 0 3px 14px; border-bottom: 1px solid #f2efe9; position: relative; }
+    .bul:last-child { border-bottom: none; }
+    .bul::before { content: "›"; color: #bbb; font-weight: 700; position: absolute; left: 2px; }
+    .bul strong { font-weight: 700; color: #111; }
+    .bul em { font-style: normal; color: var(--muted); font-size: 10px; }
+
+    /* THRESHOLD DECISION BLOCK */
+    .threshold { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 2px; }
+    .thresh-box { border-radius: 8px; padding: 12px 13px; border: 1px solid; text-align: center; }
+    .thresh-under { background: var(--green-light); border-color: var(--green-border); }
+    .thresh-over  { background: var(--red-light);   border-color: var(--red-border); }
+    .thresh-amount { font-size: 22px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+    .thresh-under .thresh-amount { color: var(--green); }
+    .thresh-over  .thresh-amount { color: var(--red); }
+    .thresh-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 5px; }
+    .thresh-under .thresh-label { color: var(--green); }
+    .thresh-over  .thresh-label { color: var(--red); }
+    .thresh-rule { font-size: 11px; color: #333; line-height: 1.5; }
+    .thresh-rule strong { font-weight: 700; color: #111; }
+
+    /* USE CATEGORY PILLS */
+    .use-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 2px; }
+    .use-item { background: var(--green-light); border: 1px solid var(--green-border); border-radius: 6px; padding: 7px 10px; display: flex; align-items: flex-start; gap: 7px; }
+    .use-icon { font-size: 14px; flex-shrink: 0; line-height: 1.2; }
+    .use-text { flex: 1; }
+    .use-title { font-size: 11px; font-weight: 700; color: var(--green); line-height: 1.2; }
+    .use-note  { font-size: 9.5px; color: #555; margin-top: 1px; line-height: 1.4; }
+
+    /* DIVIDER */
+    .sdiv { border: none; border-top: 1px solid var(--divider); margin: 9px 0; }
+
+    /* CTA LINK */
+    .cta-link { display: inline-flex; align-items: center; gap: 6px; background: var(--blue); color: #fff; border-radius: 6px; padding: 8px 14px; font-size: 11px; font-weight: 700; text-decoration: none; margin-top: 4px; transition: background 0.15s; }
+    .cta-link:hover { background: #1250880; }
+
+    /* FOOTER */
+    .footer { padding: 8px 14px; background: #fff; border-radius: 6px; border: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 9.5px; color: #aaa; gap: 12px; flex-wrap: wrap; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-limit { text-align: left; }
+    }
+    @media (max-width: 520px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .threshold, .use-grid { grid-template-columns: 1fr; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .footer { flex-direction: column; text-align: center; font-size: 10px; }
+      .st { font-size: 10px; }
+      .bul, .rule, .kv { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <div class="nav-bar">
+    <a class="nav-back" href="index.html">&#8592; Hub</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="eldercare_cheatsheet_v4.html">&#128203; Service Agreement</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="rn_vs_lpn_cheatsheet.html">&#129658; RN vs LPN</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="lead_distribution_cheatsheet.html">&#9889; Lead Distribution</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="sales_rep_expectations.html">&#128202; Rep Expectations</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="acronyms_cheatsheet.html">&#128218; Acronyms</a>
+    <span class="nav-sep">|</span>
+    <a class="nav-link" href="sales_program_overview.html">&#128640; Program Overview</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-link active">&#128179; Ramp Card</span>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <img class="logo" src="https://eldercarehomecare.com/wp-content/uploads/2024/07/cropped-favicon-300x300.png" alt="Elder Care">
+      <div>
+        <div class="brand-text">Elder Care Homecare, Inc.</div>
+        <div class="brand-sub">Sales Expense Reference</div>
+      </div>
+    </div>
+    <div class="badge">Ramp Card Guidelines</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-label">Company Expense Card</div>
+      <div class="hero-title">Ramp Card</div>
+      <div class="hero-sub">Your company card for sales-related expenses. Know the rules before you spend.</div>
+    </div>
+    <div class="hero-limit">
+      <div class="hero-limit-num">$1,500</div>
+      <div class="hero-limit-label">Monthly Limit</div>
+      <div class="hero-limit-sub">Hard cap — no exceptions</div>
+    </div>
+  </div>
+
+  <!-- ROW 1: Receipt rules + Approved uses -->
+  <div class="grid-2">
+
+    <!-- Receipt threshold -->
+    <div class="card green-card">
+      <div class="st st-green"><span class="dot dot-green"></span>Receipt &amp; Memo Rules</div>
+      <div class="threshold">
+        <div class="thresh-box thresh-under">
+          <div class="thresh-label">Under</div>
+          <div class="thresh-amount">$50</div>
+          <div class="thresh-rule"><strong>No receipt or memo required.</strong> Just use it.</div>
+        </div>
+        <div class="thresh-box thresh-over">
+          <div class="thresh-label">$50 or Over</div>
+          <div class="thresh-amount">$50+</div>
+          <div class="thresh-rule"><strong>Receipt and memo both required.</strong> Submit promptly.</div>
+        </div>
+      </div>
+      <hr class="sdiv">
+      <div class="kv"><span class="kl">Monthly hard cap</span><span class="kv-val flag">$1,500 — no exceptions</span></div>
+      <div class="kv"><span class="kl">Submit via</span><span class="kv-val">Ramp platform</span></div>
+      <hr class="sdiv">
+      <a class="cta-link" href="https://support.ramp.com/hc/en-us/articles/360042588454-Submitting-receipts-and-memos-for-your-Ramp-funds" target="_blank">&#128279; How to Submit Receipts &amp; Memos</a>
+    </div>
+
+    <!-- Approved uses -->
+    <div class="card green-card">
+      <div class="st st-green"><span class="dot dot-green"></span>Approved Uses</div>
+      <div class="use-grid">
+        <div class="use-item">
+          <div class="use-icon">&#128652;</div>
+          <div class="use-text">
+            <div class="use-title">Transportation</div>
+            <div class="use-note">Bus, subway, tolls, train, flights</div>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">&#128663;</div>
+          <div class="use-text">
+            <div class="use-title">Rideshare / Taxi</div>
+            <div class="use-note">Use with discretion — not for daily commuting. Reserved for company events and larger travel.</div>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">&#127873;</div>
+          <div class="use-text">
+            <div class="use-title">Holiday Gifts</div>
+            <div class="use-note">For referral sources</div>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">&#127743;</div>
+          <div class="use-text">
+            <div class="use-title">Non-Standard Marketing</div>
+            <div class="use-note">Materials not available through standard channels</div>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">&#127860;</div>
+          <div class="use-text">
+            <div class="use-title">Client Meals &amp; Drinks</div>
+            <div class="use-note">Taking clients or referral sources out</div>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">&#127859;</div>
+          <div class="use-text">
+            <div class="use-title">Catering</div>
+            <div class="use-note">For events or office occasions</div>
+          </div>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">&#127881;</div>
+          <div class="use-text">
+            <div class="use-title">Events</div>
+            <div class="use-note">Company or referral-related events</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Key reminders -->
+  <div class="grid-3">
+
+    <div class="card red-card">
+      <div class="st st-red"><span class="dot dot-red"></span>Hard Rules</div>
+      <div class="rule red-rule"><strong>$1,500/month is a hard cap.</strong> There are no exceptions. Plan your spending accordingly.</div>
+      <div class="rule red-rule"><strong>$50+ requires both a receipt and a memo.</strong> Missing either means the expense is non-compliant.</div>
+      <div class="rule red-rule"><strong>Rideshare and taxi are not for daily commuting.</strong> Use for company events and larger travel only.</div>
+    </div>
+
+    <div class="card amber-card">
+      <div class="st st-amber"><span class="dot dot-amber"></span>Rideshare Rule — Use with Discretion</div>
+      <div class="rule amber-rule">Rideshare (Uber, Lyft) and taxi are <strong>approved but restricted.</strong> They should not be used as your everyday way to get around.</div>
+      <div class="bul">&#10003; Company events</div>
+      <div class="bul">&#10003; Larger travel trips</div>
+      <div class="bul" style="color:var(--red);">&#10007; <strong>Daily commuting to accounts</strong></div>
+      <div class="bul" style="color:var(--red);">&#10007; <strong>Routine day-to-day use</strong></div>
+    </div>
+
+    <div class="card blue-card">
+      <div class="st st-blue"><span class="dot dot-blue"></span>Submitting Receipts &amp; Memos</div>
+      <div class="rule blue-rule">All receipts and memos for expenses <strong>$50 and over</strong> are submitted directly through the Ramp platform.</div>
+      <div class="bul"><strong>Step 1:</strong> Open the Ramp app or portal</div>
+      <div class="bul"><strong>Step 2:</strong> Find the transaction</div>
+      <div class="bul"><strong>Step 3:</strong> Attach receipt + add memo</div>
+      <div class="bul"><strong>Step 4:</strong> Submit for review</div>
+      <hr class="sdiv">
+      <a class="cta-link" href="https://support.ramp.com/hc/en-us/articles/360042588454-Submitting-receipts-and-memos-for-your-Ramp-funds" target="_blank">&#128279; Ramp Submission Guide</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Elder Care Homecare, Inc. &middot; 389 5th Ave, Suite 500, New York, NY 10016 &middot; Billing@eldercarehc.com &middot; (917) 538-3986</span>
+    <span>For internal sales use only &middot; Ramp Card Guidelines</span>
+  </div>
+
+</div>
+</body>
+</html>
